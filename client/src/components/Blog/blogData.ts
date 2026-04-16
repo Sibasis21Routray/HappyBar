@@ -1,0 +1,152 @@
+export interface TextBlock {
+  type: "text"
+  content: string
+}
+
+export interface BoldBlock {
+  type: "bold"
+  content: string
+}
+
+export interface ImageBlock {
+  type: "image"
+  src: string
+  alt: string
+}
+
+export interface LinkBlock {
+  type: "link"
+  label: string
+  href: string
+  prefix?: string  // text before the link e.g. "← Prev: "
+}
+
+export type ContentBlock = TextBlock | BoldBlock | ImageBlock | LinkBlock
+
+export interface BlogPost {
+  slug: string
+  title: string
+  date: string
+  category: string
+  excerpt: string
+  image: string
+  blocks: ContentBlock[]
+}
+
+// Sample image URLs - replace with your actual image URLs
+const IMAGE_URLS = {
+  child1: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&h=600&fit=crop",
+  children2: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&h=600&fit=crop",
+  girl: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=800&h=600&fit=crop",
+}
+
+export const blogPosts: BlogPost[] = [
+  {
+    slug: "empathy-in-classroom",
+    title: "When I think about Empathy.......",
+    date: "May 18, 2024",
+    category: "General | Kids | Schools",
+    excerpt: "In a remote village far from the city, the school bell rings, children walk into their classrooms, few dragging their feet, some with big smiles, some with tired eyes. Miss Mary walks in and starts...",
+    image: "https://happybarnutrition.org/wp-content/uploads/2024/06/kids-in-front-of-run-down-school.webp",
+    blocks: [
+      { type: "text", content: "In a remote village far from the city, the school bell rings, children walk into their classrooms, few dragging their feet, some with big smiles, some with tired eyes." },
+      { type: "text", content: "Miss Mary walks in and starts teaching. She tries engaging the children by asking questions." },
+      { type: "text", content: '"No hands up."' },
+      { type: "text", content: "She wants to shake them up, to get them going. She asks them to stand up and look to the right, look to the left, and greet the person next to them. Children stand up reluctantly and their silent sighs fill the classroom." },
+      { type: "text", content: "The teacher knows what the problem is." },
+      { type: "text", content: "She asks everyone to sit back down. They cannot focus on what she is saying as they are hungry. They have not had anything to eat. The last they have eaten was the previous day at lunch time. Despite this, they have walked miles to get to school barefoot or with tattered footwear." },
+      { type: "image", src: "https://happybarnutrition.org/wp-content/uploads/2024/06/image-e1715999318759.webp", alt: "Children in classroom" },
+      { type: "text", content: "Its heart wrenching for Miss Mary although it is a small burden to bear, compared to what the children are going through. Miss Mary continues, doing her best. Every so often, the children's eyes keep looking at the door. The tired eyes, looking longingly for something to arrive." },
+      { type: "text", content: "Miss Mary is disturbed by the rustling and the whispers behind her and turns around to face the children. She faces a joyous sight; all children their eyes lit up like a beautiful Christmas tree, stare back at her." },
+      { type: "text", content: "Miss Mary meets the Happy Bar Delivery Man at the door picks up a box of bars that have come all the way from a far-off city to their very remote village and school. Miss Mary knows the children cannot wait any longer and rushes to give them the one bar that they have waited 20 hours for." },
+      { type: "text", content: "She watches while the children quickly unwrap the bars and gobble it down with gladness." },
+      { type: "text", content: "Few of them stop to look up and smile, some start chatting with their friends, there is an occasional chuckle and giggle, sounds that seem to come from their inner being. There is chatter, playful banter and so much energy in the cramped classroom its infectious and Miss" },
+      { type: "image", src: "https://happybarnutrition.org/wp-content/uploads/2024/06/image-1-e1715999344175.webp", alt: "Girl smiling" },
+      { type: "text", content: "The Happy Bar team and all its champions strive to get that one bar to every child who has walked many miles in tattered shoes to get to school." },
+      { type: "text", content: "Thank you Happy Bar champion donors, you have put yourself in their shoes." },
+      { type: "bold", content: "Boing – the Happy Bar mascot says," },
+      { type: "bold", content: "Walk in my shoes," },
+      { type: "bold", content: "come chase away the blues." },
+      { type: "bold", content: "Peek into my classroom" },
+      { type: "bold", content: "come shoo away the gloom." },
+      { type: "bold", content: "Bring us a happy bar," },
+      { type: "bold", content: "and you be the Star." },
+     
+    ],
+  },
+  {
+    slug: "tree-line-journey",
+    title: "What Lies Beyond the Tree Line?",
+    date: "May 16, 2024",
+    category: "Leprosy",
+    excerpt: "In February of 2014, accompanied by some like-minded friends, I visited several ostracized, leprosy-ridden villages in the south of India, with the aim of improving the nutritional status of...",
+    image:"https://happybarnutrition.org/wp-content/uploads/2024/05/kid-sitting-on-bench.jpg",
+    blocks: [
+      { type: "text", content: "In February of 2014, accompanied by some like-minded friends, I visited several ostracized, leprosy-ridden villages in the south of India, with the aim of improving the nutritional status of the children there." },
+      { type: "text", content: "We met families who had been pushed to the edges of society and found hope through small acts of kindness. The journey was long and the roads were difficult, but every mile was worth it when we saw the children's faces." },
+      { type: "image", src: IMAGE_URLS.child1, alt: "Village children" },
+      { type: "text", content: "The journey taught us that food and compassion walk together. When Happy Bars arrived, they were more than nutrition — they were a message that someone cares." },
+      { type: "text", content: "We documented each village, each child, and each story so we could share the truth of what lies beyond the tree line: a community eager for support and dignity." },
+      { type: "text", content: "The tree line is more than a geographical boundary. It is a metaphor for the invisible walls that separate the privileged from the forgotten. Beyond it live families who have been cast out, children who have never known a full meal, and elders who have accepted their fate." },
+      { type: "image", src: IMAGE_URLS.girl, alt: "Child portrait" },
+      { type: "text", content: "But hope travels further than stigma. Every Happy Bar that reaches these villages carries with it a message: you are not forgotten." },
+      
+    ],
+  },
+  {
+    slug: "leprosy-international-impact",
+    title: "Leprosy's International Impact.",
+    date: "May 16, 2024",
+    category: "Leprosy",
+    excerpt: "A quick google search will show - leprosy isn't a part of the past. 150 years since it's discovery and this biblical disease still causes problems and a severely separating social stigma...",
+    image: "https://happybarnutrition.org/wp-content/uploads/2024/06/leprosy-feet.webp",
+    blocks: [
+      { type: "text", content: "A quick google search will show - leprosy isn't a part of the past. 150 years since its discovery and this biblical disease still causes problems and a severely separating social stigma." },
+      { type: "text", content: "Families are still isolated, simple daily tasks become a challenge, and children go without consistent nutrition. The disease does not just affect the body — it tears apart communities and leaves children without a future." },
+      { type: "image", src: IMAGE_URLS.child1, alt: "Children" },
+      { type: "text", content: "Our work helps change that narrative by delivering reliable food support and community outreach, opening doors to medical care and education." },
+      { type: "text", content: "The impact of each Happy Bar goes far beyond the calories — it helps restore dignity and connection. When a child receives a bar, they receive proof that someone, somewhere, thought of them today." },
+      { type: "image", src: IMAGE_URLS.children2, alt: "Community" },
+      { type: "text", content: "The story of leprosy's international impact is still being written, and every donor becomes part of the chapter that proves care can outpace stigma." },
+      { type: "text", content: "There are an estimated 200,000 new cases of leprosy diagnosed every year worldwide. Most of them are in developing nations where access to medicine, food, and education is already scarce. Happy Bar Nutrition is committed to reaching the most remote of these communities." },
+     
+    ],
+  },
+  {
+    slug: "annual-report-2023",
+    title: "Happy Bar Nutrition, Inc. Annual Report 2023",
+    date: "May 16, 2024",
+    category: "General",
+    excerpt: "We extend our heartfelt gratitude to you for your unwavering support, whether as a donor, a well-wisher, or a champion. This year we reached more children than ever before...",
+    image: "https://happybarnutrition.org/wp-content/uploads/2024/06/blog-for-annual-2023-hb-photo-1280x960.webp",
+    blocks: [
+      { type: "text", content: "We extend our heartfelt gratitude to you for your unwavering support, whether as a donor, a well-wisher, or a champion of our cause." },
+      { type: "text", content: "This year, 2023, marked a turning point for Happy Bar Nutrition, Inc. We reached more children, more villages, and more communities than any previous year in our history." },
+      { type: "image", src: IMAGE_URLS.child1, alt: "Children receiving bars" },
+      { type: "text", content: "Thanks to our incredible network of donors and champions, we distributed over 81,000 Happy Bars across 23 different groups and communities." },
+      { type: "text", content: "Every single bar represents a child who went to school that day with something in their stomach. Every bar represents a teacher who could finally teach, because her students could finally focus." },
+      { type: "image", src: IMAGE_URLS.girl, alt: "Happy child" },
+      { type: "text", content: "We are proud of what we have accomplished together, and we are more committed than ever to expanding our reach in 2024 and beyond." },
+      { type: "text", content: "Thank you for believing in us. Thank you for walking in their shoes." },
+     
+    ],
+  },
+  {
+    slug: "81000-bars-support",
+    title: "81,000 bars to 23 different groups – all due to YOUR support!!!",
+    date: "May 15, 2023",
+    category: "General",
+    excerpt: "We want to express our deepest appreciation for your unwavering support of Happy Bar Nutrition. Thanks to your generosity, we reached 23 groups with over 81,000 bars this year...",
+    image: "https://happybarnutrition.org/wp-content/uploads/2024/05/My-granparents-have-leprosy.-I-have-to-live-with-them.-We-are-very-poor-scaled.jpg",
+    blocks: [
+      { type: "text", content: "We want to express our deepest appreciation for your unwavering support of Happy Bar Nutrition. Thanks to your generosity, we reached 23 groups with over 81,000 bars this year." },
+      { type: "text", content: "This milestone would not have been possible without each and every one of you — the donors, the volunteers, the champions who spread the word, and the believers who trusted us with their support." },
+      { type: "image", src: IMAGE_URLS.children2, alt: "Group of children" },
+      { type: "bold", content: "81,000 bars. 23 groups. Countless smiles." },
+      { type: "text", content: "Behind each of those numbers is a real child, a real classroom, a real moment of joy when the Happy Bar arrived. We have heard stories of children saving half their bar to bring home to a sibling. Of teachers crying when they see their students finally able to concentrate." },
+      { type: "image", src: IMAGE_URLS.child1, alt: "Child smiling" },
+      { type: "text", content: "This is what your support makes possible. This is why we do what we do." },
+      { type: "text", content: "We are already working towards an even bigger milestone in the year ahead. With your continued support, we know we can get there." },
+    ],
+  },
+]

@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+ --navbar-orange: #B14D26;
+ --light-purple: #D3B9CF;
+ --mid-purple: #A7739E;
+ --dark-purple: #823775;
+ --text-purple: #993366;
+ --button-yellow: #FFBD35;
+ --button-blue: #5C52F8;
+ --button-hover: #B23775;
+ --text-yellow: #FFBD35;
+ --link-blue: #2EA3F2;
+ --text-purple-dark: #71254C;
+ --text-orange: #F94E29;
+ --text-blue-purple: #A456EA;
+ --text-blue: #5752C1;
+ --light-blue: #C3B6D1;
+ --mid-blue: #876CA2;
+ --dark-blue: #542D7B;
+
+ --light-pink: #D5BECA;
+ --mid-pink: #A2708A;
+ --dark-pink: #71254C;
+ --light-p1: #E2D0DF;
+ --mid-p1: #C4A0BD;
+ --dark-p1: #AA77A1;
+
+ --bg-orange: #DB5A2F;
+
+ --light-p2: #E4B9CF;
+ --mid-p2: #C9739E;
+ --dark-p2: #B23775;
+
+ --light-p3: #BBB7D0;
+ --mid-p3: #766FA0;
+ --dark-p3: #3C3277;
+
+ --bg-purple-dark:#3A0024;
+
+ --text-skyblue: #2EA3F2;
+
+ --dark-orange:#FFBCA5;
+ --mid-orange: #FFD0C0;
+ --light-orange: #FFE8E0;
+ --bg-orange: #C64929;
+
+ --dark-p4: #D8C1D4;
+ --light-p4: #F1E9F0;
+ --mid-p4: #E4D3E1;
+ --bg-p4: #9D6191;
+
+}
