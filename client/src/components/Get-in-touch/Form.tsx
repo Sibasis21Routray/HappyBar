@@ -1,6 +1,6 @@
 import { useState } from "react";
 import girl7 from "../../assets/girl7.jpg";
-import { useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router";
 
 const dotLineStyle: React.CSSProperties = {
   height: "6px",
@@ -185,7 +185,15 @@ export default function Form() {
             style={{ color: "#3d0a35" }}
           >
             If you're interested in learning about our activities,{" "}
-            <span onClick={() => { navigate("/causes") }} style={{ color: "#2eaacc" }} className="hover:cursor-pointer">
+            <span onClick={() => {
+  navigate("/");
+  setTimeout(() => {
+    const el = document.getElementById("our-causes");
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  }, 100);
+}} style={{ color: "#2eaacc" }} className="hover:cursor-pointer">
               causes
             </span>
             , and partner organizations, or if you'd like to volunteer or donate, please don't hesitate to contact us.
@@ -334,7 +342,7 @@ export default function Form() {
               <div className="min-w-0">
                 <p className="text-sm font-medium text-stone-500 mb-1 sm:mb-2">Email</p>
                 <p className="text-sm sm:text-base font-semibold text-stone-900 truncate">
-                  <a href="mailto:info@happybarnutrition.org" className="text-sky-600 hover:underline">
+                  <a href="mailto:info@happybarnutrition.org" className="text-sky-600 no-underline hover:no-underline">
                     info@happybarnutrition.org
                   </a>
                 </p>
@@ -348,7 +356,7 @@ export default function Form() {
               <div>
                 <p className="text-sm font-medium text-stone-500 mb-1 sm:mb-2">Address</p>
                 <p className="text-sm sm:text-base font-semibold text-stone-900 mb-1">
-                  <a href="#" className="text-sky-600 hover:underline">Happy Bar Nutrition Inc.</a>
+                  <Link to="/" className="text-sky-600 no-underline hover:no-underline">Happy Bar Nutrition Inc.</Link>
                 </p>
                 <p className="text-sm text-stone-600 leading-relaxed">
                   1177 Burtonwood Ave,<br />Thousand Oaks, CA 91360

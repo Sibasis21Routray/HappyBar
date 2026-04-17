@@ -39,24 +39,41 @@ const Hero: React.FC = () => {
                 <span style={{ color: "black" }}>a month</span>
               </span>
             </div>
-
+<div className="absolute right-0 bottom-0 overflow-hidden w-28 h-30">
+  <img
+    src="https://happybarnutrition.org/wp-content/uploads/2024/05/BOOING-PEEK.gif"
+    alt="Duck Peek"
+    className="w-32 h-auto animate-peek"
+  />
+</div>
             {/* <div className="h-4 lg:h-24"></div> */}
 
             {/* Buttons */}
             <div className="flex flex-col gap-3 mt-2 sm:mt-3 items-center md:items-start">
-              <button
-                className="rounded-full py-3 px-10 text-sm font-bold text-black hover:opacity-90 transition-opacity w-[240px]"
-                style={{ background: "#f5a623" }}
-              >
-                Donate With PayPal
-              </button>
-              <button
-                className="rounded-full py-3 px-10 text-sm font-bold text-white hover:opacity-90 transition-opacity w-[240px]"
-                style={{ background: "#5b6fcf" }}
-              >
-                Donate With Stripe
-              </button>
-            </div>
+  <button
+    className="group rounded-full py-3 px-10 text-sm font-bold text-black hover:text-white transition-all duration-300 w-[240px] relative overflow-hidden hover:bg-[#6b2a6b]"
+    style={{ background: "#f5a623" }}
+  >
+    <span className="inline-flex items-center gap-2 transition-transform duration-300 group-hover:translate-x-[-4px]">
+      Donate With PayPal
+      <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-x-[-8px] group-hover:translate-x-0">
+        →
+      </span>
+    </span>
+  </button>
+  
+  <button
+    className="group rounded-full py-3 px-10 text-sm font-bold text-white hover:text-white transition-all duration-300 w-[240px] relative overflow-hidden hover:bg-[#6b2a6b]"
+    style={{ background: "#5b6fcf" }}
+  >
+    <span className="inline-flex items-center gap-2 transition-transform duration-300 group-hover:translate-x-[-4px]">
+      Donate With Stripe
+      <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-x-[-8px] group-hover:translate-x-0">
+        →
+      </span>
+    </span>
+  </button>
+</div>
 
             {/* Non-profit tagline */}
             <p

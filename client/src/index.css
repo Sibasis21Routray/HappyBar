@@ -55,3 +55,26 @@ html {
  --bg-p4: #9D6191;
 
 }
+
+
+@keyframes peekRight {
+  0% {
+    transform: translateX(60%) scaleX(-1);
+  }
+  20% {
+    transform: translateX(0%) scaleX(-1);
+  }
+  60% {
+    transform: translateX(0%) scaleX(-1);
+  }
+  80% {
+    transform: translateX(60%) scaleX(-1);
+  }
+  100% {
+    transform: translateX(60%) scaleX(-1);
+  }
+}
+
+.animate-peek {
+  animation: peekRight 3.2s ease-in-out infinite;
+}

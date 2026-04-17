@@ -51,6 +51,14 @@ export default function Hero() {
             </h1>
           </div>
 
+          <div className="absolute right-0  overflow-hidden w-28 h-30">
+  <img
+    src="https://happybarnutrition.org/wp-content/uploads/2024/05/BOOING-PEEK.gif"
+    alt="Duck Peek"
+    className="w-32 h-auto animate-peek"
+  />
+</div>
+
           {/* Body */}
           <div
             className="flex flex-col justify-center items-center text-center py-10 sm:py-14 px-6 sm:px-8 lg:px-10"

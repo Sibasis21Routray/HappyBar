@@ -1,3 +1,4 @@
+import { ChevronRight } from "lucide-react";
 import boy2 from "../../assets/boy2.jpg";
 
 const heroImage = boy2;
@@ -33,37 +34,40 @@ export default function DonationBanner() {
                 <span style={{ color: "#F5C518" }}>a whole year</span>
               </p>
 
-              {/* PayPal Button */}
-              <button
-                className="block mx-auto mb-4 font-bold rounded-full cursor-pointer transition-opacity hover:opacity-90"
-                style={{
-                  background: "var(--button-yellow)",
-                  color: "#000000",
-                  fontSize: "clamp(0.875rem, 3vw, 1rem)",
-                  padding: "10px 0",
-                  border: "none",
-                  width: "100%",
-                  maxWidth: "260px",
-                }}
-              >
-                Donate With PayPal
-              </button>
+             {/* Buttons Container - stacked vertically */}
+                <div className="flex flex-col items-center gap-4">
+                  {/* PayPal Button */}
+                  <button
+                    className="group w-full max-w-[260px] font-bold rounded-full cursor-pointer transition-all duration-300 ease-in-out bg-[var(--button-yellow)] hover:bg-[var(--dark-p2)] hover:text-white flex items-center justify-center gap-2 px-5 py-2.5"
+                    style={{
+                      color: "#000000",
+                      fontSize: "clamp(0.875rem, 3vw, 1rem)",
+                      border: "none",
+                    }}
+                  >
+                    <span>Donate With PayPal</span>
+                    <ChevronRight
+                      className="w-4 h-4 opacity-0 -translate-x-2 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-0"
+                      strokeWidth={2.5}
+                    />
+                  </button>
 
-              {/* Stripe Button */}
-              <button
-                className="block mx-auto font-bold rounded-full cursor-pointer transition-opacity hover:opacity-90"
-                style={{
-                  background: "var(--button-blue)",
-                  color: "#ffffff",
-                  fontSize: "clamp(0.875rem, 3vw, 1rem)",
-                  padding: "10px 0",
-                  border: "none",
-                  width: "100%",
-                  maxWidth: "260px",
-                }}
-              >
-                Donate With Stripe
-              </button>
+                  {/* Stripe Button */}
+                  <button
+                    className="group w-full max-w-[260px] font-bold rounded-full cursor-pointer transition-all duration-300 ease-in-out bg-[var(--button-blue)] hover:bg-[var(--dark-p2)] flex items-center justify-center gap-2 px-5 py-2.5"
+                    style={{
+                      color: "#ffffff",
+                      fontSize: "clamp(0.875rem, 3vw, 1rem)",
+                      border: "none",
+                    }}
+                  >
+                    <span>Donate With Stripe</span>
+                    <ChevronRight
+                      className="w-4 h-4 opacity-0 -translate-x-2 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-0"
+                      strokeWidth={2.5}
+                    />
+                  </button>
+                </div>
             </div>
 
             {/* ── Right: Image (full height) ── */}

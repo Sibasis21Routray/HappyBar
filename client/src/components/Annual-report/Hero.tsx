@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import annual from "../../assets/annual.jpg";
 
 export default function Hero() {
@@ -52,6 +53,15 @@ export default function Hero() {
   </h1>
 </div>
 
+<div className="absolute right-0  overflow-hidden w-28 h-30">
+  <img
+    src="https://happybarnutrition.org/wp-content/uploads/2024/05/BOOING-PEEK.gif"
+    alt="Duck Peek"
+    className="w-32 h-auto animate-peek"
+  />
+</div>
+
+
             {/* Body — white, centered with responsive padding */}
             <div
               className="flex flex-col justify-center items-center text-center py-2 sm:py-10 md:py-12 lg:py-14 px-4 sm:px-6 md:px-8 lg:px-10"
@@ -90,7 +100,7 @@ export default function Hero() {
                   lineHeight: 1.5 
                 }}
               >
-                <a href="/" className="hover:underline">Happy Bar Nutrition</a>{" "}
+                <Link to="/" className="hover:underline">Happy Bar Nutrition</Link>{" "}
                 <span style={{ color: "var(--text-purple, #5e2a7c)" }}>
                   Inc. (est. 2016) is a US 501(c)(3) non-profit organisation
                 </span>

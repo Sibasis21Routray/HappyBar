@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import child1 from "../../assets/child1.1.jpg";
 import child2 from "../../assets/child1.2.jpg";
 
@@ -51,7 +52,7 @@ export default function Year2024() {
             style={{ lineHeight: 1.85 }}
           >
             <p className="mb-6">
-              <span style={{ color: "#5bb8d4", fontWeight: 700 }}>Happy Bar Nutrition</span>{" "}
+              <Link to="/" style={{ color: "#5bb8d4", fontWeight: 700 }}>Happy Bar Nutrition</Link>{" "}
               Inc has donated over{" "}
               <strong>2.1 million</strong> Happy Bars to undernourished children and elderly
               in poverty since 2014.

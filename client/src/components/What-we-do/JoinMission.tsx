@@ -81,7 +81,15 @@ export default function JoinMission() {
       </h2>
 
       <div className="flex flex-wrap gap-6 justify-center">
-        <div> <ArrowButton label="Browse Causes" filled={true} /></div>
+        <div onClick={() => {
+  navigate("/");
+  setTimeout(() => {
+    const el = document.getElementById("our-causes");
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  }, 100);
+}}> <ArrowButton label="Browse Causes" filled={true} /></div>
         <div onClick={()=>navigate("/get-involved")}><ArrowButton label="Get Involved" filled={false} /></div>
       </div>
     </div>

@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import childImage from "../../assets/child.jpg";
+import { Link } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -69,13 +70,13 @@ const Mission: React.FC = () => {
               of your donation goes to the production of Happy Bars – an all-natural
               protein energy bar. Each Happy Bar costs US 25 cents and delivers &gt;5g
               of protein per serving, important vitamins and other{" "}
-              {/* <a
-                href="/what-we-do/#nutrition"
-                style={{ color: "var(--link-blue)" }}
-                className="hover:opacity-80 transition-opacity"
-              > */}
-                nutrition
-              {/* </a> */}
+              <Link
+  to="/what-we-do/#nutrition"
+  style={{ color: "var(--link-blue)" }}
+  className="hover:opacity-80 transition-opacity"
+>
+  nutrition
+</Link>
               .
             </p>
           </div>

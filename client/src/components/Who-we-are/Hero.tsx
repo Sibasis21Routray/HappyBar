@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import whoWeAreGirl from "../../assets/whoWeAreGirl.jpg";
 
 export default function Hero() {
@@ -39,6 +40,14 @@ export default function Hero() {
     flexShrink: 0
   }}
 >
+
+  <div className="absolute right-0  overflow-hidden w-28 h-30">
+  <img
+    src="https://happybarnutrition.org/wp-content/uploads/2024/05/BOOING-PEEK.gif"
+    alt="Duck Peek"
+    className="w-32 h-auto animate-peek"
+  />
+</div>
                 <h1
                   className="text-black font-bold tracking-wide text-center px-4"
                   style={{ fontSize: "clamp(2.5rem, 8vw, 4.5rem)", lineHeight: 1 }}
@@ -52,6 +61,7 @@ export default function Hero() {
                 className="flex flex-col justify-center items-center text-center py-10 sm:py-12 md:py-14 px-6 sm:px-8 md:px-10"
                 style={{ flex: 1 }}
               >
+                
                 <p
                   className="leading-relaxed mb-6 sm:mb-7 md:mb-8 max-w-2xl"
                   style={{ fontSize: "clamp(1.3rem, 3vw, 1.18rem)", color: "#1a1a1a" }}
@@ -63,9 +73,9 @@ export default function Hero() {
                   costs so 100% of your donation goes to the production of Happy
                   Bars. Each Happy Bar costs US 25 cents and delivers 5g of protein
                   per serving plus other{" "}
-                  <a href="/what-we-do/#nutrition" style={{ color: "var(--link-blue)", textDecoration: "none" }}>
+                  <Link to="/what-we-do/#nutrition" style={{ color: "var(--link-blue)", textDecoration: "none" }}>
                     nutrition
-                  </a>
+                  </Link>
                   .
                 </p>
 
@@ -73,7 +83,7 @@ export default function Hero() {
                   className="font-bold max-w-2xl"
                   style={{ color: "var(--link-blue)", fontSize: "clamp(1.3rem, 2.5vw, 1.05rem)", lineHeight: 1.5 }}
                 >
-                  <a href="/">Happy Bar Nutrition </a>
+                  <Link to="/">Happy Bar Nutrition </Link>
                   <span style={{ color: "var(--text-purple)" }}>
                     Inc. (est. 2016) is a US 501(c)(3) non-profit organisation
                   </span>

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import whoWeAreGirl from "../../assets/whoWeAreGirl.jpg";
 
 export default function Hero() {
@@ -52,6 +53,14 @@ export default function Hero() {
                   Donate
                 </h1>
               </div>
+
+              <div className="absolute right-0 overflow-hidden w-28 h-30">
+  <img
+    src="https://happybarnutrition.org/wp-content/uploads/2024/05/BOOING-PEEK.gif"
+    alt="Duck Peek"
+    className="w-32 h-auto animate-peek"
+  />
+</div>
 
               {/* Body */}
               <div
@@ -131,7 +140,7 @@ export default function Hero() {
                     lineHeight: 1.5
                   }}
                 >
-                  <a href="/">Happy Bar Nutrition </a>
+                  <Link to="/">Happy Bar Nutrition </Link>
                   <span style={{ color: "var(--text-purple)" }}>
                     Inc. (est. 2016) is a US 501(c)(3) non-profit organisation
                   </span>

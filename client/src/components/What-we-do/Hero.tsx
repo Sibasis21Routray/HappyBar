@@ -41,6 +41,17 @@ export default function Hero() {
               </h1>
             </div>
 
+            <div className="absolute right-0  overflow-hidden w-28 h-30">
+  <img
+    src="https://happybarnutrition.org/wp-content/uploads/2024/05/BOOING-PEEK.gif"
+    alt="Duck Peek"
+    className="w-32 h-auto animate-peek"
+  />
+</div>
+
+
+
+
             {/* Body — white, centred */}
             <div
               className="flex flex-col justify-center items-center text-center py-10 sm:py-4 px-4 sm:px-6 lg:px-10"
@@ -72,7 +83,7 @@ export default function Hero() {
                 className="font-bold max-w-lg text-sm sm:text-base"
                 style={{ color: "var(--link-blue)", fontSize: "clamp(0.9rem, 2.5vw, 1.05rem)", lineHeight: 1.5 }}
               >
-                <span onClick={()=>{navigate("/")}} className="hover:underline transition">Happy Bar Nutrition</span>{" "}
+                <span onClick={()=>{navigate("/")}} className="hover:underline transition cursor-pointer ">Happy Bar Nutrition</span>{" "}
                 <span style={{ color: "var(--text-purple)" }}>Inc. (est. 2016) is a US 501(c)(3) non-profit organisation</span>
               </p>
             </div>

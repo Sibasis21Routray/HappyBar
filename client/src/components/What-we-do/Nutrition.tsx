@@ -294,20 +294,7 @@ export default function Nutrition() {
                   />
                 </div>
 
-                {/* Graph caption */}
-                <p className="text-xs sm:text-sm leading-relaxed mt-2 pb-4" style={{ color: "#ccc" }}>
-                  To see the latest publication on the Joint Child Malnutrition Estimates, 2023
-                  edition, access{" "}
-                  <a
-                    href="https://www.who.int/teams/nutrition-and-food-safety/monitoring-nutritional-status-and-food-safety-and-events/joint-child-malnutrition-estimates"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{ color: "#2FA8D5", fontWeight: 600 }}
-                  >
-                    here
-                  </a>
-                  .
-                </p>
+                
 
               </div>
             </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import girl3 from "../../assets/girl3.jpg";
+import { Link } from "react-router-dom";
 
 const Causes: React.FC = () => {
   return (
@@ -27,21 +28,23 @@ const Causes: React.FC = () => {
 
             <p className="text-white text-sm sm:text-base md:text-xl leading-relaxed font-medium max-w-2xl">
               The Happy Bar program arose from the collective experiences of Dr. Jack Kennedy, Ph.D. Agriculture, working with 
-              <a
-                href="/what-we-do/#nutrition"
+              <Link
+                to="/what-we-do/#nutrition"
                 style={{ color: "var(--link-blue)" }}
                 className="hover:opacity-80 transition-opacity"
               >
                 {" "}nutrition{" "}
-              </a>
+              </Link>
               programs for Embrace a Village leprosy services and
-              <a
-                href="https://aliceclaraaugustine.com/"
-                style={{ color: "var(--link-blue)" }}
-                className="hover:opacity-80 transition-opacity"
-              >
-                {" "}Dr. Alice (Clare) Augustine{" "}
-              </a>
+            <a
+  href="https://aliceclaraaugustine.com/"
+  target="_blank"
+  rel="noopener noreferrer"
+  style={{ color: "var(--link-blue)" }}
+  className="hover:opacity-80 transition-opacity"
+>
+  Dr. Alice (Clare) Augustine
+</a>
               , Ph.D. Biology, working with various orphanages and charitable programs. Seeing that protein deficiency is rampant in children living in poverty, they tried several approaches to supplement protein before developing a simple recipe that children love, and parents approved.
             </p>
           </div>

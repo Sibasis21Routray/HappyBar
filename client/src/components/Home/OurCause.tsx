@@ -76,7 +76,7 @@ function ImageMosaic() {
 
 export default function OurCauses() {
   return (
-    <div className="bg-white font-sans overflow-x-hidden">
+    <div className="bg-white font-sans overflow-x-hidden" id="our-causes">
       <div className="max-w-7xl mx-auto px-6 py-16">
         
         {/* Main Title Section */}
