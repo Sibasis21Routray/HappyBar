@@ -5,6 +5,10 @@ interface Cause {
   amount: string;
   image: string;
 }
+const stripeLink188 = import.meta.env.VITE_STRIPE_USD_188_PER_YEAR;
+const paypalLink188 = import.meta.env.VITE_PAYPAL_USD_188_PER_YEAR;
+const stripeLink94 = import.meta.env.VITE_STRIPE_USD_94_PER_YEAR;
+const paypalLink94 = import.meta.env.VITE_PAYPAL_USD_94_PER_YEAR;
 
 const causes: Cause[] = [
   {
@@ -97,11 +101,35 @@ const PayPalP = () => (
   </svg>
 );
 
-function DonateButtons() {
+function DonateButtons({ causeId }: { causeId: number }) {
+  // Determine which payment links to use based on the cause's amount
+  const isAmount188 = causes.find(c => c.id === causeId)?.amount.includes("188");
+  const stripeUrl = isAmount188 ? stripeLink188 : stripeLink94;
+  const paypalUrl = isAmount188 ? paypalLink188 : paypalLink94;
+
+  const handlePaypalDonate = () => {
+    if (paypalUrl) {
+      window.open(paypalUrl, '_blank', 'noopener,noreferrer');
+    } else {
+      console.error('PayPal donation URL not configured for this amount');
+      alert('PayPal donation link is not configured. Please contact the administrator.');
+    }
+  };
+
+  const handleStripeDonate = () => {
+    if (stripeUrl) {
+      window.open(stripeUrl, '_blank', 'noopener,noreferrer');
+    } else {
+      console.error('Stripe donation URL not configured for this amount');
+      alert('Stripe donation link is not configured. Please contact the administrator.');
+    }
+  };
+
   return (
     <div className="flex gap-3 mt-5 justify-center flex-wrap">
       {/* PayPal donate button */}
       <button
+        onClick={handlePaypalDonate}
         className="flex items-center gap-2 rounded-2xl cursor-pointer hover:opacity-90 transition-opacity bg-[var(--button-yellow)] hover:bg-[var(--dark-p2)]"
         style={{
           //backgroundColor: "#f5a623",
@@ -136,6 +164,7 @@ function DonateButtons() {
 
       {/* Stripe donate button */}
       <button
+        onClick={handleStripeDonate}
         className="flex items-center gap-2 rounded-2xl cursor-pointer hover:opacity-90 transition-opacity bg-[var(--button-blue)] hover:bg-[var(--dark-p2)]"
         style={{
           //backgroundColor: "#6772e5",
@@ -202,7 +231,7 @@ function CauseCard({ cause }: { cause: Cause }) {
         </p>
       </div>
 
-      <DonateButtons />
+      <DonateButtons causeId={cause.id} />
     </div>
   );
 }

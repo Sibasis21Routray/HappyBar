@@ -2,6 +2,8 @@ import { ChevronRight } from "lucide-react";
 import boy2 from "../../assets/children3.jpg";
 
 const heroImage = boy2;
+const stripeLink = import.meta.env.VITE_STRIPE_USD_8_PER_MONTH;
+const paypalLink = import.meta.env.VITE_PAYPAL_USD_8_PER_MONTH;
 
 export default function DonationBanner() {
   return (
@@ -28,13 +30,14 @@ export default function DonationBanner() {
                 style={{ fontSize: "clamp(1rem, 4vw, 1.35rem)" }}
               >
                 Support their journey with <br />
-                <span style={{ color: "#F5C518" }}>just US$ 188 a year</span> 
+                <span style={{ color: "#F5C518" }}>just US$8 per month</span> 
               </p>
 
               {/* Buttons Container - stacked vertically */}
               <div className="flex flex-col items-center gap-4">
                 {/* PayPal Button */}
                 <button
+                  onClick={() => window.open(paypalLink, '_blank', 'noopener,noreferrer')}
                   className="group w-full max-w-[260px] font-bold rounded-full cursor-pointer transition-all duration-300 ease-in-out bg-[var(--button-yellow)] hover:bg-[var(--dark-p2)] hover:text-white flex items-center justify-center gap-2 px-5 py-2.5"
                   style={{
                     color: "#000000",
@@ -46,11 +49,14 @@ export default function DonationBanner() {
                   <ChevronRight
                     className="w-4 h-4 opacity-0 -translate-x-2 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-0"
                     strokeWidth={2.5}
+                    
                   />
                 </button>
 
                 {/* Stripe Button */}
                 <button
+                  onClick={() => window.open(stripeLink, '_blank', 'noopener,noreferrer')}
+                
                   className="group w-full max-w-[260px] font-bold rounded-full cursor-pointer transition-all duration-300 ease-in-out bg-[var(--button-blue)] hover:bg-[var(--dark-p2)] flex items-center justify-center gap-2 px-5 py-2.5"
                   style={{
                     color: "#ffffff",

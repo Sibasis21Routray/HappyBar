@@ -2,17 +2,20 @@ import React from "react";
 import kidsImage from "../../assets/kids.jpg";
 
 const Hero: React.FC = () => {
+const stripeLink = import.meta.env.VITE_STRIPE_USD_CUSTOM;
+const paypalLink = import.meta.env.VITE_PAYPAL_USD_CUSTOM;
+
   return (
     <div className="w-full overflow-hidden flex justify-center bg-white">
       <div className="w-full max-w-9xl mx-auto">
         {/* ── Hero Section ── */}
         <section
-  className="
+          className="
     relative flex flex-col md:flex-row items-center justify-center gap-6 lg:gap-12 pt-12 px-4 sm:px-6 lg:px-8
     bg-[linear-gradient(to_bottom,#b7a1b5_20%,#ffffff_20%)]
     lg:bg-[linear-gradient(to_bottom,#b7a1b5_60%,#ffffff_40%)]
   "
->
+        >
           {/* Left: Photo - moved upward with negative margin */}
           <div className="flex justify-center w-full md:w-auto  ml-0 ">
             <img
@@ -32,48 +35,51 @@ const Hero: React.FC = () => {
               <span className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-black tracking-normal">
                 <span className="italic" style={{ color: "#7a0050" }}>
                   DONATING
-                </span> just
+                </span>{" "}
+                just
                 <span style={{ color: "#7a0050" }}> $8 US </span>
               </span>
               <span className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black italic tracking-normal">
                 <span style={{ color: "black" }}>a month</span>
               </span>
             </div>
-<div className="absolute right-0 bottom-0 overflow-hidden w-28 h-30">
-  <img
-    src="https://happybarnutrition.org/wp-content/uploads/2024/05/BOOING-PEEK.gif"
-    alt="Duck Peek"
-    className="w-32 h-auto animate-peek"
-  />
-</div>
+            <div className="absolute right-0 bottom-0 overflow-hidden w-28 h-30">
+              <img
+                src="https://happybarnutrition.org/wp-content/uploads/2024/05/BOOING-PEEK.gif"
+                alt="Duck Peek"
+                className="w-32 h-auto animate-peek"
+              />
+            </div>
             {/* <div className="h-4 lg:h-24"></div> */}
 
             {/* Buttons */}
             <div className="flex flex-col gap-3 mt-2 sm:mt-3 items-center md:items-start">
-  <button
-    className="group rounded-full py-3 px-10 text-sm font-bold text-black hover:text-white transition-all duration-300 w-[240px] relative overflow-hidden hover:bg-[#6b2a6b]"
-    style={{ background: "#f5a623" }}
-  >
-    <span className="inline-flex items-center gap-2 transition-transform duration-300 group-hover:translate-x-[-4px]">
-      Donate With PayPal
-      <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-x-[-8px] group-hover:translate-x-0">
-        →
-      </span>
-    </span>
-  </button>
-  
-  <button
-    className="group rounded-full py-3 px-10 text-sm font-bold text-white hover:text-white transition-all duration-300 w-[240px] relative overflow-hidden hover:bg-[#6b2a6b]"
-    style={{ background: "#5b6fcf" }}
-  >
-    <span className="inline-flex items-center gap-2 transition-transform duration-300 group-hover:translate-x-[-4px]">
-      Donate With Stripe
-      <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-x-[-8px] group-hover:translate-x-0">
-        →
-      </span>
-    </span>
-  </button>
-</div>
+              <button
+                className="group rounded-full py-3 px-10 text-sm font-bold text-black hover:text-white transition-all duration-300 w-[240px] relative overflow-hidden hover:bg-[#6b2a6b]"
+                style={{ background: "#f5a623" }}
+                onClick={() => window.open(paypalLink, "_blank")}
+              >
+                <span className="inline-flex items-center gap-2 transition-transform duration-300 group-hover:translate-x-[-4px]">
+                  Donate With PayPal
+                  <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-x-[-8px] group-hover:translate-x-0">
+                    →
+                  </span>
+                </span>
+              </button>
+
+              <button
+                className="group rounded-full py-3 px-10 text-sm font-bold text-white hover:text-white transition-all duration-300 w-[240px] relative overflow-hidden hover:bg-[#6b2a6b]"
+                style={{ background: "#5b6fcf" }}
+                onClick={() => window.open(stripeLink, "_blank")}
+              >
+                <span className="inline-flex items-center gap-2 transition-transform duration-300 group-hover:translate-x-[-4px]">
+                  Donate With Stripe
+                  <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-x-[-8px] group-hover:translate-x-0">
+                    →
+                  </span>
+                </span>
+              </button>
+            </div>
 
             {/* Non-profit tagline */}
             <p

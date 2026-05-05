@@ -2,6 +2,8 @@ import { ChevronRight } from "lucide-react";
 import boy4 from "../../assets/boy4.jpg";
 
 const heroImage = boy4;
+const stripeLink = import.meta.env.VITE_STRIPE_USD_471;
+const paypalLink = import.meta.env.VITE_PAYPAL_USD_471;
 
 export default function DonationBanner() {
   return (
@@ -32,7 +34,7 @@ export default function DonationBanner() {
                 style={{ fontSize: "clamp(1.25rem, 4vw, 1.75rem)" }}
               >
                 Just
-                <span style={{ color: "var(--text-purple-dark, #5e2a7c)" }}> US$ 188</span> a year
+                <span style={{ color: "var(--text-purple-dark, #5e2a7c)" }}> US$ 471</span> a year
               </p>
 
               {/* Buttons Container - stacked vertically */}
@@ -45,6 +47,8 @@ export default function DonationBanner() {
                     fontSize: "clamp(0.875rem, 3vw, 1rem)",
                     border: "none",
                   }}
+
+                  onClick={() => window.open(paypalLink, "_blank")}
                 >
                   <span>Donate With PayPal</span>
                   <ChevronRight
@@ -61,6 +65,7 @@ export default function DonationBanner() {
                     fontSize: "clamp(0.875rem, 3vw, 1rem)",
                     border: "none",
                   }}
+                  onClick={() => window.open(stripeLink, "_blank")}
                 >
                   <span>Donate With Stripe</span>
                   <ChevronRight

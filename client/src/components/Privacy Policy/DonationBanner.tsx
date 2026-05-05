@@ -1,6 +1,8 @@
 import children2 from "../../assets/children2.jpg";
 
 const heroImage = children2;
+const stripeLink = import.meta.env.VITE_STRIPE_USD_94_PER_YEAR;
+const paypalLink = import.meta.env.VITE_PAYPAL_USD_94_PER_YEAR;
 
 export default function DonationBanner() {
   return (
@@ -44,6 +46,7 @@ export default function DonationBanner() {
                 width: "min(260px, 100%)",
                 maxWidth: 260,
               }}
+              onClick={() => window.open(paypalLink, "_blank")}
             >
               Donate With PayPal
             </button>
@@ -60,6 +63,7 @@ export default function DonationBanner() {
                 width: "min(260px, 100%)",
                 maxWidth: 260,
               }}
+              onClick={() => window.open(stripeLink, "_blank")}
             >
               Donate With Stripe
             </button>

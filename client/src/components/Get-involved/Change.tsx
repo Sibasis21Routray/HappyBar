@@ -17,6 +17,9 @@ interface CardData {
   icon: React.ReactNode;
 }
 
+const stripeLink = import.meta.env.VITE_STRIPE_USD_CUSTOM;
+const paypalLink = import.meta.env.VITE_PAYPAL_USD_CUSTOM;
+
 const cards: CardData[] = [
   {
     id: "donate",
@@ -24,8 +27,8 @@ const cards: CardData[] = [
     title: "DONATE",
     desc: "Make a tax deductible donation",
     buttons: [
-      { label: "Donate With PayPal", style: "yellow", url: "" },
-      { label: "Donate With Stripe", style: "purple", url: "" },
+      { label: "Donate With PayPal", style: "yellow", url: paypalLink },
+      { label: "Donate With Stripe", style: "purple", url: stripeLink },
     ],
     icon: (
       <svg width="36" height="36" viewBox="0 0 36 36" fill="none">

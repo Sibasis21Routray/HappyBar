@@ -2,6 +2,8 @@ import { ChevronRight } from "lucide-react";
 import baby1 from "../../assets/baby1.jpg";
 
 const heroImage = baby1;
+const stripeLink = import.meta.env.VITE_STRIPE_USD_8_PER_MONTH;
+const paypalLink = import.meta.env.VITE_PAYPAL_USD_8_PER_MONTH;
 
 export default function DonationBanner() {
   return (
@@ -45,6 +47,7 @@ export default function DonationBanner() {
                     fontSize: "clamp(0.875rem, 3vw, 1rem)",
                     border: "none",
                   }}
+                  onClick={() => window.open(paypalLink, "_blank")}
                 >
                   <span>Donate With PayPal</span>
                   <ChevronRight
@@ -61,6 +64,7 @@ export default function DonationBanner() {
                     fontSize: "clamp(0.875rem, 3vw, 1rem)",
                     border: "none",
                   }}
+                  onClick={() => window.open(stripeLink, "_blank")}
                 >
                   <span>Donate With Stripe</span>
                   <ChevronRight

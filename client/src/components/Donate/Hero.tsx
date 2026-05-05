@@ -2,6 +2,9 @@ import { Link } from "react-router-dom";
 import whoWeAreGirl from "../../assets/whoWeAreGirl.jpg";
 
 export default function Hero() {
+const stripeLink = import.meta.env.VITE_STRIPE_USD_CUSTOM;
+const paypalLink = import.meta.env.VITE_PAYPAL_USD_CUSTOM;
+
   return (
     <div className="w-full overflow-hidden flex justify-center bg-white">
       <div className="w-full max-w-9xl mx-auto">
@@ -86,6 +89,7 @@ export default function Hero() {
                       padding: "12px 24px",
                       border: "none",
                     }}
+                    onClick={() => window.open(paypalLink, "_blank")}
                   >
                     <span
                       style={{
@@ -111,6 +115,7 @@ export default function Hero() {
                       padding: "12px 24px",
                       border: "none",
                     }}
+                      onClick={() => window.open(stripeLink, "_blank")}
                   >
                     <span
                       style={{
