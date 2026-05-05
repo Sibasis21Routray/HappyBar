@@ -60,7 +60,7 @@ const paypalLink = import.meta.env.VITE_PAYPAL_USD_CUSTOM;
                 onClick={() => window.open(paypalLink, "_blank")}
               >
                 <span className="inline-flex items-center gap-2 transition-transform duration-300 group-hover:translate-x-[-4px]">
-                  Donate With PayPal
+                  Donate With PayPalaa
                   <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-x-[-8px] group-hover:translate-x-0">
                     →
                   </span>
