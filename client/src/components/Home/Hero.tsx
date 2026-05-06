@@ -2,8 +2,8 @@ import React from "react";
 import kidsImage from "../../assets/kids.jpg";
 
 const Hero: React.FC = () => {
-const stripeLink = import.meta.env.VITE_STRIPE_USD_CUSTOM;
-const paypalLink = import.meta.env.VITE_PAYPAL_USD_CUSTOM;
+const stripeLink = import.meta.env.VITE_STRIPE_USD_8_PER_MONTH;
+const paypalLink = import.meta.env.VITE_PAYPAL_USD_8_PER_MONTH;
 
   return (
     <div className="w-full overflow-hidden flex justify-center bg-white">
