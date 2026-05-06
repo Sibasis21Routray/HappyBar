@@ -3,12 +3,16 @@ interface Cause {
   title: string;
   description: string;
   amount: string;
+  amountValue: number; // Added for price mapping
   image: string;
 }
+
 const stripeLink188 = import.meta.env.VITE_STRIPE_USD_188_PER_YEAR;
 const paypalLink188 = import.meta.env.VITE_PAYPAL_USD_188_PER_YEAR;
 const stripeLink94 = import.meta.env.VITE_STRIPE_USD_94_PER_YEAR;
 const paypalLink94 = import.meta.env.VITE_PAYPAL_USD_94_PER_YEAR;
+const stripeLink500 = import.meta.env.VITE_STRIPE_USD_500;
+const paypalLink500 = import.meta.env.VITE_PAYPAL_USD_500;
 
 const causes: Cause[] = [
   {
@@ -16,6 +20,7 @@ const causes: Cause[] = [
     title: "THE CAUSE: KIDS WITH CANCER",
     description: "Help small children fight cancer for just",
     amount: "US$ 188 a year",
+    amountValue: 188,
     image: "https://happybarnutrition.org/wp-content/uploads/2024/06/baby-joshua.webp",
   },
   {
@@ -23,20 +28,23 @@ const causes: Cause[] = [
     title: "THE CAUSE: KIDS WITH LEPROSY",
     description: "Help children with leprosy for just",
     amount: "US$ 94 a year",
+    amountValue: 94,
     image: "https://happybarnutrition.org/wp-content/uploads/2024/06/girl-with-leprosy-2-scaled.webp",
   },
   {
     id: 3,
     title: "THE CAUSE: KIDS WITH SCID",
-    description: "Help small children fight cancer for just",
+    description: "Help small children fight SCID for just",
     amount: "US$ 188 a year",
+    amountValue: 188,
     image: "https://happybarnutrition.org/wp-content/uploads/2024/06/baby-joshua-2-1.webp",
   },
   {
     id: 4,
-    title: "THE CAUSE: KIDS IN SCHOOL",
+    title: "THE CAUSE: KIDS IN SCHOOLS",
     description: "Help needy kids in school for just",
     amount: "US$ 188 a year",
+    amountValue: 188,
     image: "https://happybarnutrition.org/wp-content/uploads/2024/06/many-kids-in-classroom-480x360.webp",
   },
   {
@@ -44,13 +52,15 @@ const causes: Cause[] = [
     title: "THE CAUSE: MALNOURISHED KIDS",
     description: "Help kids fight malnourishment for just",
     amount: "US$ 94 a year",
+    amountValue: 94,
     image: "https://happybarnutrition.org/wp-content/uploads/2024/06/kid-with-tumbler-in-hand-and-happy-bar-e1715395669467-480x513.webp",
   },
   {
     id: 6,
-    title: "THE CAUSE: KIDS IN POVERTY",
+    title: "THE CAUSE: KIDS IN SLUMS",
     description: "Help lift kids out of poverty for just",
-    amount: "US$ 94 a year",
+    amount: "US$ 500 a year",
+    amountValue: 500,
     image: "https://happybarnutrition.org/wp-content/uploads/2024/06/kids-in-slum-480x327.webp",
   },
 ];
@@ -101,17 +111,28 @@ const PayPalP = () => (
   </svg>
 );
 
-function DonateButtons({ causeId }: { causeId: number }) {
-  // Determine which payment links to use based on the cause's amount
-  const isAmount188 = causes.find(c => c.id === causeId)?.amount.includes("188");
-  const stripeUrl = isAmount188 ? stripeLink188 : stripeLink94;
-  const paypalUrl = isAmount188 ? paypalLink188 : paypalLink94;
+function DonateButtons({ amountValue }: { amountValue: number }) {
+  // Determine which payment links to use based on the cause's amount value
+  const getPaymentUrls = (amount: number) => {
+    switch (amount) {
+      case 188:
+        return { stripe: stripeLink188, paypal: paypalLink188 };
+      case 94:
+        return { stripe: stripeLink94, paypal: paypalLink94 };
+      case 500:
+        return { stripe: stripeLink500, paypal: paypalLink500 };
+      default:
+        return { stripe: stripeLink188, paypal: paypalLink188 };
+    }
+  };
+
+  const { stripe: stripeUrl, paypal: paypalUrl } = getPaymentUrls(amountValue);
 
   const handlePaypalDonate = () => {
     if (paypalUrl) {
       window.open(paypalUrl, '_blank', 'noopener,noreferrer');
     } else {
-      console.error('PayPal donation URL not configured for this amount');
+      console.error('PayPal donation URL not configured for amount:', amountValue);
       alert('PayPal donation link is not configured. Please contact the administrator.');
     }
   };
@@ -120,7 +141,7 @@ function DonateButtons({ causeId }: { causeId: number }) {
     if (stripeUrl) {
       window.open(stripeUrl, '_blank', 'noopener,noreferrer');
     } else {
-      console.error('Stripe donation URL not configured for this amount');
+      console.error('Stripe donation URL not configured for amount:', amountValue);
       alert('Stripe donation link is not configured. Please contact the administrator.');
     }
   };
@@ -132,7 +153,6 @@ function DonateButtons({ causeId }: { causeId: number }) {
         onClick={handlePaypalDonate}
         className="flex items-center gap-2 rounded-2xl cursor-pointer hover:opacity-90 transition-opacity bg-[var(--button-yellow)] hover:bg-[var(--dark-p2)]"
         style={{
-          //backgroundColor: "#f5a623",
           padding: "12px 24px",
           border: "none",
         }}
@@ -167,7 +187,6 @@ function DonateButtons({ causeId }: { causeId: number }) {
         onClick={handleStripeDonate}
         className="flex items-center gap-2 rounded-2xl cursor-pointer hover:opacity-90 transition-opacity bg-[var(--button-blue)] hover:bg-[var(--dark-p2)]"
         style={{
-          //backgroundColor: "#6772e5",
           padding: "12px 24px",
           border: "none",
         }}
@@ -231,7 +250,7 @@ function CauseCard({ cause }: { cause: Cause }) {
         </p>
       </div>
 
-      <DonateButtons causeId={cause.id} />
+      <DonateButtons amountValue={cause.amountValue} />
     </div>
   );
 }
@@ -239,8 +258,6 @@ function CauseCard({ cause }: { cause: Cause }) {
 export default function OurCause() {
   return (
     <div className="w-full bg-white">
-    
-
       {/* Causes grid */}
       <div className="max-w-9xl mx-auto px-4 sm:px-18 py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-18">
