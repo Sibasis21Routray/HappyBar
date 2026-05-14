@@ -139,7 +139,7 @@ export default function Form() {
     const emailBody = `Name: ${form.name}%0A%0AEmail: ${form.email}%0A%0AMobile: ${form.mobile}%0A%0AMessage:%0A${form.message}`;
     
     // Create proper mailto link with mailto: prefix
-    const mailtoLink = `mailto:borntoreigns234@gmail.com?subject=Contact Form Submission from ${encodeURIComponent(form.name)}&body=${emailBody}`;
+    const mailtoLink = `mailto:info@happybarnutrition.org?subject=Contact Form Submission from ${encodeURIComponent(form.name)}&body=${emailBody}`;
 
     // Open default email client
     window.location.href = mailtoLink;
