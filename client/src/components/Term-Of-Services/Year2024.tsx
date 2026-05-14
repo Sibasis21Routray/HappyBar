@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import girlImage from "../../assets/girl.jpg";
-
+import girl45 from "../../assets/girl45.webp"
 gsap.registerPlugin(ScrollTrigger);
 
 interface StatItem {
@@ -155,7 +155,7 @@ const Year2024: React.FC = () => {
             <div className="flex-shrink-0 w-full lg:w-auto flex justify-center">
               <img
                 ref={imageRef}
-                src="https://happybarnutrition.org/wp-content/uploads/2024/06/girl-in-school-uniform-and-pony-tails-scaled-1.webp"
+                src={girl45}
                 alt="Girl smiling"
                 className="rounded-2xl object-cover w-full max-w-[280px] sm:max-w-[320px] md:max-w-[350px] lg:w-[300px] h-auto lg:h-[400px]"
                 style={{

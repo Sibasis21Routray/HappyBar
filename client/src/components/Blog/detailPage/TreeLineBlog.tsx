@@ -1,5 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import kidsittig from "../../../assets/kidsittig.jpg"
+import leprosy from "../../../assets/leprosy-feet.webp"
+import kids5678 from "../../../assets/kids5678.webp"
 
 function TreeLineBlog() {
   return (
@@ -20,7 +23,7 @@ function TreeLineBlog() {
         {/* Hero image + Meta */}
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1fr_260px] -mt-16 relative z-10 items-start">
           <img 
-            src="https://happybarnutrition.org/wp-content/uploads/2024/05/kid-sitting-on-bench.jpg" 
+            src={kidsittig}
             alt="Child sitting on bench" 
             className="w-full rounded-2xl shadow-xl object-cover aspect-[4/3]" 
           />
@@ -131,7 +134,7 @@ function TreeLineBlog() {
             {/* Related Post 1 - Leprosy's International Impact */}
             <Link to="/blog/leprosy-international-impact" className="block rounded-2xl bg-white border border-purple-50 shadow-md hover:shadow-xl transition-shadow overflow-hidden cursor-pointer">
               <img 
-                src="https://happybarnutrition.org/wp-content/uploads/2024/06/leprosy-feet.webp" 
+                src={leprosy}
                 alt="Leprosy's International Impact" 
                 className="w-full h-48 object-cover" 
               />
@@ -149,7 +152,7 @@ function TreeLineBlog() {
             {/* Related Post 2 - When I think about Empathy */}
             <Link to="/blog/empathy-in-classroom" className="block rounded-2xl bg-white border border-purple-50 shadow-md hover:shadow-xl transition-shadow overflow-hidden cursor-pointer">
               <img 
-                src="https://happybarnutrition.org/wp-content/uploads/2024/06/kids-in-front-of-run-down-school.webp" 
+                src={kids5678} 
                 alt="When I think about Empathy" 
                 className="w-full h-48 object-cover" 
               />

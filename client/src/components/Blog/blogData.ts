@@ -1,3 +1,14 @@
+import child1 from "../../assets/child1.jpg";
+import children2 from "../../assets/child1.jpg";
+import girl from "../../assets/girl.jpeg"
+import leprosyMap from "../../assets/leprosyMap.png"
+import support from "../../assets/support.avif"
+import imagee1715999318759 from "../../assets/image-e1715999318759.webp"
+import imagee17159 from "../../assets/imagee17159.webp"
+import leprosyfeet from "../../assets/leprosy-feet.webp"
+import blog2334 from "../../assets/blog-for-annual-2023-hb-photo-1280x960.webp"
+import childrtfyghjk from "../../assets/My-granparents-have-leprosy.-I-have-to-live-with-them.-We-are-very-poor-scaled.jpg"
+import kidsitting from "../../assets/kid-sitting-on-bench.jpg"
 export interface TextBlock {
   type: "text"
   content: string
@@ -35,13 +46,12 @@ export interface BlogPost {
 
 // Sample image URLs - replace with your actual image URLs
 const IMAGE_URLS = {
-  child1: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&h=600&fit=crop",
-  children2: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&h=600&fit=crop",
-  girl: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=800&h=600&fit=crop",
-  leprosyMap: "https://happybarnutrition.org/wp-content/uploads/2024/05/image.png",
-  support:"https://static.wixstatic.com/media/42a459_90b63fa5f9ca4aca9c106c3e5b7473dd~mv2.jpg/v1/fill/w_350,h_359,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/42a459_90b63fa5f9ca4aca9c106c3e5b7473dd~mv2.jpg"
+  child1: child1,
+  children2: children2,
+  girl: girl,
+  leprosyMap: leprosyMap,
+  support: support,
 }
-
 export const blogPosts: BlogPost[] = [
   {
     slug: "empathy-in-classroom",
@@ -49,7 +59,7 @@ export const blogPosts: BlogPost[] = [
     date: "May 18, 2024",
     category: "General | Kids | Schools",
     excerpt: "In a remote village far from the city, the school bell rings, children walk into their classrooms, few dragging their feet, some with big smiles, some with tired eyes. Miss Mary walks in and starts...",
-    image: "https://happybarnutrition.org/wp-content/uploads/2024/06/kids-in-front-of-run-down-school.webp",
+    image: imagee1715999318759,
     blocks: [
       { type: "text", content: "In a remote village far from the city, the school bell rings, children walk into their classrooms, few dragging their feet, some with big smiles, some with tired eyes." },
       { type: "text", content: "Miss Mary walks in and starts teaching. She tries engaging the children by asking questions." },
@@ -57,13 +67,13 @@ export const blogPosts: BlogPost[] = [
       { type: "text", content: "She wants to shake them up, to get them going. She asks them to stand up and look to the right, look to the left, and greet the person next to them. Children stand up reluctantly and their silent sighs fills the classroom." },
       { type: "text", content: "The teacher knows what the problem is." },
       { type: "text", content: "She asks everyone to sit back down. They cannot focus on what she is saying as they are hungry. They have not had anything to eat. The last they have eaten was the previous day at lunch time. Despite this, they have walked miles to get to school barefoot or with tattered footwear." },
-      { type: "image", src: "https://happybarnutrition.org/wp-content/uploads/2024/06/image-e1715999318759.webp", alt: "Children in classroom" },
+      { type: "image", src: imagee1715999318759, alt: "Children in classroom" },
       { type: "text", content: "Its heart wrenching for Miss Mary although it is a small burden to bear, compared to what the children are going through. Miss Mary continues, doing her best. Every so often, the children's eyes keep looking at the door. The tired eyes, looking longingly for something to arrive." },
       { type: "text", content: "Miss Mary is disturbed by the rustling and the whispers behind her and turns around to face the children. She faces a joyous sight; all children their eyes lit up like a beautiful Christmas tree, stare back at her." },
       { type: "text", content: "Miss Mary meets the Happy Bar Delivery Man at the door picks up a box of bars that have come all the way from a far-off city to their very remote village and school. Miss Mary knows the children cannot wait any longer and rushes to give them the one bar that they have waited 20 hours for." },
       { type: "text", content: "She watches while the children quickly unwrap the bars and gobble it down with gladness." },
       { type: "text", content: "Few of them stop to look up and smile, some start chatting with their friends, there is an occasional chuckle and giggle, sounds that seem to come from their inner being. There is chatter, playful banter and so much energy in the cramped classroom its infectious and Miss Mary now begins class in real earnest knowing that the children are now ready to listen, their little bodies relishing the sweet delight of the Happy Bar." },
-      { type: "image", src: "https://happybarnutrition.org/wp-content/uploads/2024/06/image-1-e1715999344175.webp", alt: "Girl smiling" },
+      { type: "image", src: imagee17159, alt: "Girl smiling" },
       { type: "text", content: "The Happy Bar team and all its champions strive to get that one bar to every child who has walked many miles in tattered shoes to get to school." },
       { type: "text", content: "Thank you Happy Bar champion donors, you have put yourself in their shoes." },
       { type: "bold", content: "Boing – the Happy Bar mascot says," },
@@ -81,7 +91,7 @@ export const blogPosts: BlogPost[] = [
     date: "May 16, 2024",
     category: "Leprosy",
     excerpt: "In February of 2014, accompanied by some like-minded friends, I visited several ostracized, leprosy-ridden villages in the south of India, with the aim of improving the nutritional status of children in these villages...",
-    image: "https://happybarnutrition.org/wp-content/uploads/2024/05/kid-sitting-on-bench.jpg",
+    image: kidsitting,
     blocks: [
       { type: "text", content: "In February of 2014, accompanied by some like-minded friends, I visited several ostracized, leprosy-ridden villages in the south of India, with the aim of improving the nutritional status of children in these villages, by providing a high protein energy bar. It was then that I first came to know that there existed a \"World without Physical Pain\". It was also the first time, I understood what a blessing it is that these leprosy patients that suffer so much ghastly disfigurement literally do not feel physical pain." },
       { type: "text", content: "Quite in contrast, our children with leprosy endure, day in and day out a different kind of pain – pain of separation, the pain of not looking beautiful, the pain of being kept out of schools and colleges, the pain of being cut-off from the society and the pain of losing out on news, food rations, medicines, healthcare etc." },
@@ -116,7 +126,7 @@ export const blogPosts: BlogPost[] = [
     date: "May 16, 2024",
     category: "Leprosy",
     excerpt: "A quick google search will show - leprosy isn't a part of the past. 150 years since it's discovery and this biblical disease still causes problems and a severely separating social stigma!",
-    image: "https://happybarnutrition.org/wp-content/uploads/2024/06/leprosy-feet.webp",
+    image: leprosyfeet,
     blocks: [
       { type: "text", content: "A quick google search will show – leprosy isn't a part of the past." },
       { type: "text", content: "150 years since it's discovery and this biblical disease still causes problems and a severely separating social stigma!" },
@@ -151,7 +161,7 @@ export const blogPosts: BlogPost[] = [
     date: "May 16, 2024",
     category: "General",
     excerpt: "We extend our heartfelt gratitude to you for your unwavering support, whether as a donor, a well-wisher, or a dedicated volunteer. Your generosity has significantly impacted the lives of countless children and elders...",
-    image: "https://happybarnutrition.org/wp-content/uploads/2024/06/blog-for-annual-2023-hb-photo-1280x960.webp",
+    image: blog2334,
     blocks: [
       { type: "text", content: "We extend our heartfelt gratitude to you for your unwavering support, whether as a donor, a well-wisher, or a dedicated volunteer. Your generosity, in various forms, has significantly impacted the lives of countless children and elders, bringing hope and sustenance to those in need." },
       { type: "text", content: "As we reflect on the past year, we invite you to delve into the pages of the Happy Bar Nutrition Annual Report for 2023. Within its contents, you'll discover the breadth of our endeavors, our ambitious goals, and the remarkable progress we've made in fulfilling our mission." },
@@ -172,7 +182,7 @@ export const blogPosts: BlogPost[] = [
     date: "May 16, 2023",
     category: "General",
     excerpt: "We want to express your deepest appreciation for your unwavering support of Happy Bar Nutrition. Thanks to your generous contributions, this year, we have been able to provide over 80,000 bars...",
-    image: "https://happybarnutrition.org/wp-content/uploads/2024/05/My-granparents-have-leprosy.-I-have-to-live-with-them.-We-are-very-poor-scaled.jpg",
+    image: childrtfyghjk,
     blocks: [
       { type: "text", content: "We want to express our deepest appreciation for your unwavering support of Happy Bar Nutrition." },
       { type: "text", content: "Thanks to your generous contributions, this year, we have been able to provide over 80,000 bars to children who are most in need." },

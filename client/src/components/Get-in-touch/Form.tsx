@@ -1,6 +1,9 @@
 import { useState } from "react";
 import girl7 from "../../assets/girl7.jpg";
 import { Link, useNavigate } from "react-router";
+import mail from "../../assets/mail.png"
+import location from "../../assets/location.png"
+
 
 const dotLineStyle: React.CSSProperties = {
   height: "6px",
@@ -336,7 +339,7 @@ export default function Form() {
           <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
             <div className="bg-white rounded-[32px] p-5 sm:p-8 flex items-start gap-4 shadow-xl border border-slate-100">
               <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-3xl flex items-center justify-center bg-[#f5eef8] text-[#7a5070] shrink-0">
-                <img src="https://happybarnutrition.org/wp-content/uploads/2024/03/ngo-icon-16.png" alt="Mail Icon" />
+                <img src={mail} alt="Mail Icon" />
               </div>
               <div className="min-w-0">
                 <p className="text-sm font-medium text-stone-500 mb-1 sm:mb-2">Email</p>
@@ -350,7 +353,7 @@ export default function Form() {
 
             <div className="bg-white rounded-[32px] p-5 sm:p-8 flex items-start gap-4 shadow-xl border border-slate-100">
               <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-3xl flex items-center justify-center bg-[#e5f3eb] text-[#3b6258] shrink-0">
-               <img src="https://happybarnutrition.org/wp-content/uploads/2024/03/ngo-icon-17.png" alt="Location Icon" />
+               <img src={location} alt="Location Icon" />
               </div>
               <div>
                 <p className="text-sm font-medium text-stone-500 mb-1 sm:mb-2">Address</p>

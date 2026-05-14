@@ -1,5 +1,6 @@
 import React from "react";
 import kidsImage from "../../assets/kids.jpg";
+import  bird from "../../assets/bird.gif"; 
 
 const Hero: React.FC = () => {
 const stripeLink = import.meta.env.VITE_STRIPE_USD_8_PER_MONTH;
@@ -45,7 +46,7 @@ const paypalLink = import.meta.env.VITE_PAYPAL_USD_8_PER_MONTH;
             </div>
             <div className="absolute right-0 bottom-0 overflow-hidden w-28 h-30">
               <img
-                src="https://happybarnutrition.org/wp-content/uploads/2024/05/BOOING-PEEK.gif"
+                src={bird}
                 alt="Duck Peek"
                 className="w-32 h-auto animate-peek"
               />

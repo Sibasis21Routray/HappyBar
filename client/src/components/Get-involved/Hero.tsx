@@ -1,53 +1,56 @@
 import { Link } from "react-router-dom";
 import getInvolved from "../../assets/getInvolved.jpg";
+import bird from "../../assets/bird.gif"
 
 export default function Hero() {
   return (
-    <div className="w-full bg-white flex justify-center">
-      <div className="w-full max-w-9xl  ">
-        <div className="flex flex-col lg:flex-row items-stretch min-h-[520px]">
-
-          {/* ── Left: Image overlapping orange bar ── */}
+    <div className="w-full bg-white flex justify-center overflow-hidden">
+      <div className="w-full max-w-9xl mx-auto">
+        
+        {/* Single Top Sky Blue Stripe */}
+        <div 
+          className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen"
+          style={{ height: "clamp(90px, 10vw, 180px)", background: "var(--text-skyblue, #29abe2)" }}
+        />
+        
+        {/* Main Content - responsive column layout with overlap */}
+       <div className="flex flex-col lg:flex-row items-stretch min-h-[520px] mt-[-50px] lg:mt-[-170px]">
+          
+          {/* ── Left: Image overlapping stripe ── */}
           <div className="relative lg:flex-shrink-0 w-full lg:w-1/2">
-            {/* Orange bar — top portion only */}
-            <div
-              className="absolute top-0 left-0 right-0"
-              style={{ height: 190, background: "var(--text-skyblue)" }}
-            />
-            {/* Image sits over the bar, indented from left edge */}
-            <div className="relative z-10 lg:pl-20 pl-4 pr-4 md:pr-0 pt-6 pb-10">
+            {/* Image sits over the stripe - overlapping on mobile */}
+            <div className="relative z-10 lg:pl-20 pl-4 pr-4 md:pr-0 pt-0 pb-10">
               <img
                 src={getInvolved}
                 alt="Happy child"
                 className="w-full object-cover object-top rounded-4xl"
-                
               />
             </div>
           </div>
 
-          {/* ── Right: Orange title bar + body ── */}
+          {/* ── Right: Title + body ── */}
           <div className="flex-1 flex flex-col w-full lg:w-1/2">
 
-            {/* Orange title bar — centered */}
-           <div
-  className="flex items-center justify-center bg-transparent lg:bg-[#29abe2] lg:h-50"
-  style={{  flexShrink: 0 }}
->
-  <h1
-    className="text-black font-bold tracking-tight text-center px-4 text-5xl md:text-5xl lg:text-7xl"
-    style={{ lineHeight: 1.1 }}
-  >
-    Get Involved
-  </h1>
-</div>
+            {/* Title section - no background on desktop anymore */}
+            <div
+              className="flex items-center justify-center bg-transparent py-6 sm:py-8 md:py-10"
+              style={{ flexShrink: 0 }}
+            >
+              <h1
+                className="text-black font-bold tracking-tight text-center px-4 text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
+                style={{ lineHeight: 1.1 }}
+              >
+                Get Involved
+              </h1>
+            </div>
 
-<div className="absolute right-0  overflow-hidden w-28 h-30">
-  <img
-    src="https://happybarnutrition.org/wp-content/uploads/2024/05/BOOING-PEEK.gif"
-    alt="Duck Peek"
-    className="w-32 h-auto animate-peek"
-  />
-</div>
+            <div className="absolute right-0 overflow-hidden w-28 h-30">
+              <img
+                src={bird}
+                alt="Duck Peek"
+                className="w-32 h-auto animate-peek z-80"
+              />
+            </div>
 
             {/* Body — white, centred */}
             <div
@@ -55,10 +58,9 @@ export default function Hero() {
               style={{ flex: 1 }}
             >
               <p
-                className="font-bold mb-6 sm:mb-8 text-3xl md:text-4xl lg:text-6xl"
+                className="font-bold mb-6 sm:mb-8 text-2xl sm:text-3xl md:text-4xl lg:text-6xl"
                 style={{ 
                   color: "var(--text-skyblue)", 
-                  // fontSize: "clamp(4.5rem, 3vw, 3rem)",
                   lineHeight: 1.2
                 }}
               >

@@ -1,5 +1,5 @@
 import children2 from "../../assets/children2.jpg";
-
+import child567 from "../../assets/child567.webp"
 const heroImage = children2;
 const stripeLink = import.meta.env.VITE_STRIPE_USD_94_PER_YEAR;
 const paypalLink = import.meta.env.VITE_PAYPAL_USD_94_PER_YEAR;
@@ -72,7 +72,7 @@ export default function DonationBanner() {
           {/* ── Right: Image ── */}
           <div className="flex-shrink-0 w-full lg:w-auto">
             <img
-              src="https://happybarnutrition.org/wp-content/uploads/2024/06/biy-with-big-smile-1-scaled-1.webp"
+              src={child567}
               alt="Child in need"
               className="w-full object-cover"
               style={{ 

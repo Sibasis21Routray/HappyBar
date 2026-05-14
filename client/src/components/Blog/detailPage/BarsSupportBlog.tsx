@@ -1,5 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import child546 from "../../../assets/child546.jpg"
+import map56 from "../../../assets/map56.avif"
+import kids678 from "../../../assets/kids678.webp"
+import kidsittig from "../../../assets/kidsittig.jpg"
+
+
 
 function BarsSupportBlog() {
   return (
@@ -20,7 +26,7 @@ function BarsSupportBlog() {
         {/* Hero image + Meta */}
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1fr_260px] -mt-16 relative z-10 items-start">
           <img 
-            src="https://happybarnutrition.org/wp-content/uploads/2024/05/My-granparents-have-leprosy.-I-have-to-live-with-them.-We-are-very-poor-scaled.jpg" 
+            src={child546}
             alt="Child with grandparents" 
             className="w-full rounded-2xl shadow-xl object-cover aspect-[4/3]" 
           />
@@ -85,7 +91,7 @@ function BarsSupportBlog() {
               <div className="float-right ml-4 mb-2 w-1/2 max-w-[480px]">
                 <div className="border border-gray-200 rounded-lg shadow-sm overflow-hidden bg-white">
                    <img 
-                    src="https://static.wixstatic.com/media/42a459_90b63fa5f9ca4aca9c106c3e5b7473dd~mv2.jpg/v1/fill/w_350,h_359,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/42a459_90b63fa5f9ca4aca9c106c3e5b7473dd~mv2.jpg" 
+                    src={map56}
                     alt="Map of Bengaluru showing Sumanahalli Society" 
                     className="w-full h-auto"
                   />
@@ -141,7 +147,7 @@ function BarsSupportBlog() {
             {/* Related Post 1 - When I think about Empathy */}
             <Link to="/blog/empathy-in-classroom" className="block rounded-2xl bg-white border border-purple-50 shadow-md hover:shadow-xl transition-shadow overflow-hidden cursor-pointer">
               <img 
-                src="https://happybarnutrition.org/wp-content/uploads/2024/06/kids-in-front-of-run-down-school.webp" 
+                src={kids678}
                 alt="When I think about Empathy" 
                 className="w-full h-48 object-cover" 
               />
@@ -159,7 +165,7 @@ function BarsSupportBlog() {
             {/* Related Post 2 - What Lies Beyond the Tree Line */}
             <Link to="/blog/tree-line-journey" className="block rounded-2xl bg-white border border-purple-50 shadow-md hover:shadow-xl transition-shadow overflow-hidden cursor-pointer">
               <img 
-                src="https://happybarnutrition.org/wp-content/uploads/2024/05/kid-sitting-on-bench.jpg" 
+                src={kidsittig}
                 alt="What Lies Beyond the Tree Line" 
                 className="w-full h-48 object-cover" 
               />

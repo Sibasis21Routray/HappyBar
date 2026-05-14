@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
+import childreen5467 from "../../../../assets/childreen5467.webp"
+import kids5678 from "../../../assets/kids5678.webp"
+import child45678 from "../../../assets/child45678.jpg"
 function AnnualReportBlog() {
   return (
     <div className="w-full bg-white">
@@ -20,7 +22,7 @@ function AnnualReportBlog() {
         {/* Hero image + Meta */}
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1fr_260px] -mt-16 relative z-10 items-start">
           <img 
-            src="https://happybarnutrition.org/wp-content/uploads/2024/06/blog-for-annual-2023-hb-photo-1280x960.webp" 
+            src={childreen5467} 
             alt="Annual Report 2023" 
             className="w-full rounded-2xl shadow-xl object-cover aspect-[4/3]" 
           />
@@ -150,7 +152,7 @@ function AnnualReportBlog() {
             {/* Related Post 1 - When I think about Empathy */}
             <Link to="/blog/empathy-in-classroom" className="block rounded-2xl bg-white border border-purple-50 shadow-md hover:shadow-xl transition-shadow overflow-hidden cursor-pointer">
               <img 
-                src="https://happybarnutrition.org/wp-content/uploads/2024/06/kids-in-front-of-run-down-school.webp" 
+                src={kids5678}
                 alt="When I think about Empathy" 
                 className="w-full h-48 object-cover" 
               />
@@ -168,7 +170,7 @@ function AnnualReportBlog() {
             {/* Related Post 2 - 81,000 bars to 23 different groups */}
             <Link to="/blog/81000-bars-support" className="block rounded-2xl bg-white border border-purple-50 shadow-md hover:shadow-xl transition-shadow overflow-hidden cursor-pointer">
               <img 
-                src="https://happybarnutrition.org/wp-content/uploads/2024/05/My-granparents-have-leprosy.-I-have-to-live-with-them.-We-are-very-poor-scaled.jpg" 
+                src={child45678}
                 alt="81,000 bars to 23 different groups" 
                 className="w-full h-48 object-cover" 
               />

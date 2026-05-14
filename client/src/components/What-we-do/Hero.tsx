@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import children from "../../assets/children.jpg";
-
+import bird from "../../assets/bird.gif"
 export default function Hero() {
   const navigate=useNavigate();
   return (
@@ -43,7 +43,7 @@ export default function Hero() {
 
             <div className="absolute right-0  overflow-hidden w-28 h-30">
   <img
-    src="https://happybarnutrition.org/wp-content/uploads/2024/05/BOOING-PEEK.gif"
+    src={bird}
     alt="Duck Peek"
     className="w-32 h-auto animate-peek"
   />

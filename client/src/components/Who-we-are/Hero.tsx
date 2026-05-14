@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import whoWeAreGirl from "../../assets/whoWeAreGirl.jpg";
-
+import bird from "../../assets/bird.gif"
 export default function Hero() {
   return (
     <div className="w-full overflow-hidden flex justify-center bg-white">
@@ -43,7 +43,7 @@ export default function Hero() {
 
   <div className="absolute right-0  overflow-hidden w-28 h-30">
   <img
-    src="https://happybarnutrition.org/wp-content/uploads/2024/05/BOOING-PEEK.gif"
+    src={bird}
     alt="Duck Peek"
     className="w-32 h-auto animate-peek"
   />

@@ -1,5 +1,9 @@
 import { Link } from "react-router-dom"
-
+import kids657767 from "../../../assets/kids657767.webp"
+import imagee1715999318759 from "../../../assets/image-e1715999318759 .webp"
+import image17159993 from "../../../assets/image17159993.webp"
+import kid657 from "../../../assets/kid657.jpg"
+import leprosyfeet from "../../../assets/leprosyfeet.webp"
 const EmpathyBlog = () => {
   return (
     <div className="w-full bg-white">
@@ -19,7 +23,7 @@ const EmpathyBlog = () => {
         {/* Hero image + Meta */}
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1fr_260px] -mt-16 relative z-10 items-start">
           <img 
-            src="https://happybarnutrition.org/wp-content/uploads/2024/06/kids-in-front-of-run-down-school.webp" 
+            src={kids657767}
             alt="Children in front of school" 
             className="w-full rounded-2xl shadow-xl object-cover aspect-[4/3]" 
           />
@@ -79,7 +83,7 @@ const EmpathyBlog = () => {
           </p>
 
           <img 
-            src="https://happybarnutrition.org/wp-content/uploads/2024/06/image-e1715999318759.webp" 
+            src={imagee1715999318759} 
             alt="Children in classroom" 
             className="w-full rounded-xl shadow-md my-2"
           />
@@ -117,7 +121,7 @@ const EmpathyBlog = () => {
           </p>
 
           <img 
-            src="https://happybarnutrition.org/wp-content/uploads/2024/06/image-1-e1715999344175.webp" 
+            src={image17159993}
             alt="Girl smiling" 
             className="w-full rounded-xl shadow-md my-2"
           />
@@ -178,7 +182,7 @@ const EmpathyBlog = () => {
             {/* Related Post 1 */}
             <Link to="/blog/tree-line-journey" className="block rounded-2xl bg-white border border-purple-50 shadow-md hover:shadow-xl transition-shadow overflow-hidden cursor-pointer">
               <img 
-                src="https://happybarnutrition.org/wp-content/uploads/2024/05/kid-sitting-on-bench.jpg" 
+                src={kid657}
                 alt="What Lies Beyond the Tree Line?" 
                 className="w-full h-48 object-cover" 
               />
@@ -196,7 +200,7 @@ const EmpathyBlog = () => {
             {/* Related Post 2 */}
             <Link to="/blog/leprosy-international-impact" className="block rounded-2xl bg-white border border-purple-50 shadow-md hover:shadow-xl transition-shadow overflow-hidden cursor-pointer">
               <img 
-                src="https://happybarnutrition.org/wp-content/uploads/2024/06/leprosy-feet.webp" 
+                src={leprosyfeet}
                 alt="Leprosy's International Impact" 
                 className="w-full h-48 object-cover" 
               />

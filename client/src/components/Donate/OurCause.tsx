@@ -1,3 +1,10 @@
+import baby456 from "../../assets/baby456.webp"
+import boy4 from "../../assets/boy4.jpg"
+import baby567 from "../../assets/baby567.webp"
+import children456 from "../../assets/children456.webp"
+import baby45676 from "../../assets/baby45676.webp"
+import childreeen54678 from "../../assets/childreeen54678.webp"
+
 interface Cause {
   id: number;
   title: string;
@@ -21,7 +28,7 @@ const causes: Cause[] = [
     description: "Help small children fight cancer for just",
     amount: "US$ 188 a year",
     amountValue: 188,
-    image: "https://happybarnutrition.org/wp-content/uploads/2024/06/baby-joshua.webp",
+    image: baby456,
   },
   {
     id: 2,
@@ -29,7 +36,7 @@ const causes: Cause[] = [
     description: "Help children with leprosy for just",
     amount: "US$ 94 a year",
     amountValue: 94,
-    image: "https://happybarnutrition.org/wp-content/uploads/2024/06/girl-with-leprosy-2-scaled.webp",
+    image: boy4,
   },
   {
     id: 3,
@@ -37,7 +44,7 @@ const causes: Cause[] = [
     description: "Help small children fight SCID for just",
     amount: "US$ 188 a year",
     amountValue: 188,
-    image: "https://happybarnutrition.org/wp-content/uploads/2024/06/baby-joshua-2-1.webp",
+    image: baby567,
   },
   {
     id: 4,
@@ -45,7 +52,7 @@ const causes: Cause[] = [
     description: "Help needy kids in school for just",
     amount: "US$ 188 a year",
     amountValue: 188,
-    image: "https://happybarnutrition.org/wp-content/uploads/2024/06/many-kids-in-classroom-480x360.webp",
+    image: children456,
   },
   {
     id: 5,
@@ -53,7 +60,7 @@ const causes: Cause[] = [
     description: "Help kids fight malnourishment for just",
     amount: "US$ 94 a year",
     amountValue: 94,
-    image: "https://happybarnutrition.org/wp-content/uploads/2024/06/kid-with-tumbler-in-hand-and-happy-bar-e1715395669467-480x513.webp",
+    image:baby45676,
   },
   {
     id: 6,
@@ -61,7 +68,7 @@ const causes: Cause[] = [
     description: "Help lift kids out of poverty for just",
     amount: "US$ 500 a year",
     amountValue: 500,
-    image: "https://happybarnutrition.org/wp-content/uploads/2024/06/kids-in-slum-480x327.webp",
+    image: childreeen54678,
   },
 ];
 
@@ -259,7 +266,7 @@ export default function OurCause() {
   return (
     <div className="w-full bg-white">
       {/* Causes grid */}
-      <div className="max-w-9xl mx-auto px-4 sm:px-18 py-12">
+      <div className="max-w-9xl mx-auto px-4 sm:px-18 py-0">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-18">
           {causes.map((cause) => (
             <CauseCard key={cause.id} cause={cause} />

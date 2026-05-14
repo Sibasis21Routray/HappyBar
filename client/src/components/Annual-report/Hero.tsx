@@ -1,66 +1,68 @@
 import { Link } from "react-router";
 import annual from "../../assets/annual.jpg";
+import bird from "../../assets/bird.gif"
+
 
 export default function Hero() {
   return (
     <div className="w-full bg-white flex justify-center overflow-hidden">
       <div className="w-full max-w-9xl mx-auto">
-        {/* Main Content - responsive column layout */}
-        <div className="flex flex-col lg:flex-row items-stretch min-h-[600px]">
-          
-          {/* ── Left: Image overlapping yellow bar ── */}
+        {/* Single Top Yellow Stripe */}
+        <div 
+          className="w-full"
+          style={{ height: "clamp(80px, 30vw, 180px)", background: "var(--button-yellow, #f5a623)" }}
+        />
+        
+        {/* Main Content - responsive column layout with responsive overlap */}
+<div className="flex flex-col lg:flex-row items-stretch min-h-[600px]" style={{ marginTop: "clamp(-160px, -10vw, -120px)" }}>
+          {/* ── Left: Image ── */}
           <div className="relative flex-shrink-0 w-full lg:w-[45%] xl:w-[850px]">
-            {/* Yellow bar — top portion only */}
-            <div
-              className="absolute top-0 left-0 right-0"
-              style={{ height: 130, background: "var(--button-yellow, #f5a623)" }}
-            />
-            {/* Image sits over the bar, indented from left edge - extended height to half page */}
-           <div className="relative z-10 px-4 md:px-0 md:pl-[3vw] pt-5 mx-auto">
-  <img
-    src={annual}
-    alt="Annual report cover"
-    className="
-      w-full 
-      max-w-[600px] 
-      md:max-w-[700px] 
-      lg:max-w-[900px]
-      h-[220px] 
-      sm:h-[280px] 
-      md:h-[400px] 
-      lg:h-[55vh]
-      object-cover 
-      object-top 
-      rounded-3xl
-    "
-  />
-</div>
+            {/* Image positioned to overlap stripe */}
+            <div className="relative z-10 px-4 md:px-0 md:pl-[3vw] pt-5 mx-auto">
+              <img
+                src={annual}
+                alt="Annual report cover"
+                className="
+                  w-full 
+                  max-w-[600px] 
+                  md:max-w-[700px] 
+                  lg:max-w-[900px]
+                  h-[220px] 
+                  sm:h-[280px] 
+                  md:h-[400px] 
+                  lg:h-[55vh]
+                  object-cover 
+                  object-top 
+                  rounded-3xl
+                "
+              />
+            </div>
           </div>
 
-          {/* ── Right: Yellow title bar + body ── */}
+          {/* ── Right: Title + body ── */}
           <div className="flex-1 flex flex-col">
             
-            {/* Yellow title bar — centered */}
-           <div className="flex items-center justify-center px-4 text-center bg-transparent md:bg-[#f5a623] py-6 sm:py-8 md:py-10">
-  <h1
-    className="text-black font-bold"
-    style={{
-      fontSize: "clamp(2.5rem, 8vw, 5rem)",
-      lineHeight: 1
-    }}
-  >
-    Annual Reports
-  </h1>
-</div>
+            {/* Title section - no yellow background */}
+            <div className="flex items-center justify-center px-4 text-center py-6 sm:py-8 md:py-10">
+              <h1
+                className="text-black font-bold"
+                style={{
+                  fontSize: "clamp(2.5rem, 8vw, 5rem)",
+                  lineHeight: 1
+                }}
+              >
+                Annual Reports
+              </h1>
+            </div>
 
-<div className="absolute right-0  overflow-hidden w-28 h-30">
-  <img
-    src="https://happybarnutrition.org/wp-content/uploads/2024/05/BOOING-PEEK.gif"
-    alt="Duck Peek"
-    className="w-32 h-auto animate-peek"
-  />
-</div>
-
+            <div className="absolute right-0 overflow-hidden w-28 h-30">
+              <img
+                
+src={bird}
+                alt="Duck Peek"
+                className="w-32 h-auto animate-peek"
+              />
+            </div>
 
             {/* Body — white, centered with responsive padding */}
             <div
@@ -72,7 +74,6 @@ export default function Hero() {
                 style={{ 
                   color: "var(--text-purple, #5e2a7c)", 
                   fontSize: "clamp(1.5rem, 5vw, 3.2rem)",
-                  // lineHeight: 1.2
                 }}
               >
                 Thank You to Our Donors. <br />
@@ -80,8 +81,7 @@ export default function Hero() {
               </p>
               
               <p
-                className=" mb-6 md:mb-8 max-w-3xl  md:font-semibold text-gray-500 leading-relaxed md:leading-tight text-xl"
-               
+                className="mb-6 md:mb-8 max-w-3xl md:font-semibold text-gray-500 leading-relaxed md:leading-tight text-xl"
               >
                 Our Annual Reports are published with an intent to update our donors, partners, 
                 volunteers and the general public on our activities, progress and goals.
@@ -110,7 +110,7 @@ export default function Hero() {
         </div>
 
         {/* ── Multi-color Wave - Responsive height ── */}
-        <div className="relative -mt-1 overflow-hidden">
+        <div className="relative overflow-hidden">
           <svg
             viewBox="0 0 1440 120"
             xmlns="http://www.w3.org/2000/svg"
