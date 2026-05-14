@@ -112,7 +112,9 @@ export default function Form() {
     }
   };
 
-  const handleSubmit = async () => {
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault(); // Prevent any default form submission
+    
     // Mark all fields as touched
     setTouched({
       name: true,
@@ -133,29 +135,26 @@ export default function Form() {
     setLoading(true);
     setMessage(null);
 
-    try {
-      const response = await fetch("http://localhost:3000/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
+    // Create email body with proper formatting
+    const emailBody = `Name: ${form.name}%0A%0AEmail: ${form.email}%0A%0AMobile: ${form.mobile}%0A%0AMessage:%0A${form.message}`;
+    
+    // Create proper mailto link with mailto: prefix
+    const mailtoLink = `mailto:borntoreigns234@gmail.com?subject=Contact Form Submission from ${encodeURIComponent(form.name)}&body=${emailBody}`;
 
-      const data = await response.json();
+    // Open default email client
+    window.location.href = mailtoLink;
 
-      if (response.ok) {
-        setMessage({ type: "success", text: data.message || "Email sent successfully!" });
-        setForm({ name: "", email: "", mobile: "", message: "" });
-        setErrors({});
-        setTouched({});
-      } else {
-        setMessage({ type: "error", text: data.error || "Failed to send email. Please try again." });
-      }
-    } catch (error) {
-      console.error("Error:", error);
-      setMessage({ type: "error", text: "Failed to send email. Please check if the server is running." });
-    } finally {
-      setLoading(false);
-    }
+    // Show success message
+    setMessage({ 
+      type: "success", 
+      text: "Your email client has been opened. Please send the email to complete your submission." 
+    });
+    
+    // Reset form
+    setForm({ name: "", email: "", mobile: "", message: "" });
+    setErrors({});
+    setTouched({});
+    setLoading(false);
   };
 
   return (
@@ -186,14 +185,14 @@ export default function Form() {
           >
             If you're interested in learning about our activities,{" "}
             <span onClick={() => {
-  navigate("/");
-  setTimeout(() => {
-    const el = document.getElementById("our-causes");
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-    }
-  }, 100);
-}} style={{ color: "#2eaacc" }} className="hover:cursor-pointer">
+              navigate("/");
+              setTimeout(() => {
+                const el = document.getElementById("our-causes");
+                if (el) {
+                  el.scrollIntoView({ behavior: "smooth" });
+                }
+              }, 100);
+            }} style={{ color: "#2eaacc" }} className="hover:cursor-pointer">
               causes
             </span>
             , and partner organizations, or if you'd like to volunteer or donate, please don't hesitate to contact us.
@@ -212,7 +211,7 @@ export default function Form() {
           </div>
 
           {/* Form */}
-          <div className="bg-white rounded-2xl p-5 sm:p-8 md:p-12 flex flex-col gap-4 mt-2 md:mt-10">
+          <form onSubmit={handleSubmit} className="bg-white rounded-2xl p-5 sm:p-8 md:p-12 flex flex-col gap-4 mt-2 md:mt-10">
             {/* Show image inside form card on mobile only */}
             <div className="sm:hidden rounded-xl overflow-hidden mb-2">
               <img
@@ -315,7 +314,7 @@ export default function Form() {
             {/* Submit Button */}
             <div className="flex justify-end">
               <button
-                onClick={handleSubmit}
+                type="submit"
                 disabled={loading}
                 className="px-7 py-3 rounded-full text-white text-xs font-bold tracking-widest cursor-pointer transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 style={{ backgroundColor: "#b03070" }}
@@ -326,10 +325,10 @@ export default function Form() {
                   !loading && ((e.currentTarget as HTMLButtonElement).style.backgroundColor = "#b03070")
                 }
               >
-                {loading ? "SENDING..." : "GET IN TOUCH"}
+                {loading ? "OPENING EMAIL..." : "GET IN TOUCH"}
               </button>
             </div>
-          </div>
+          </form>
         </div>
 
         {/* ── Contact info cards ── */}
