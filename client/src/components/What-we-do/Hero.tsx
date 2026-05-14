@@ -16,7 +16,7 @@ export default function Hero() {
               style={{ height: 190, background: "var(--dark-purple)" }}
             />
             {/* Image sits over the bar, indented from left edge */}
-            <div className="relative z-10 lg:pl-20 pl-4 pr-4 md:pr-0 pt-6 pb-10">
+            <div className="relative z-10 lg:pl-20 pl-4 pr-4 md:pr-0 pt-14 pb-10">
               <img
                 src={children}
                 alt="Happy child enjoying nutritious Happy Bar"

@@ -17,7 +17,7 @@ export default function Hero() {
         />
         
         {/* Main Content - responsive column layout with overlap */}
-        <div className="flex flex-col lg:flex-row items-stretch min-h-[520px] mt-[-30px] lg:mt-[-170px]">
+        <div className="flex flex-col lg:flex-row items-stretch min-h-[520px] mt-[-30px] lg:mt-[-140px]">
 
           {/* ── Left: Image overlapping stripe ── */}
           <div className="relative flex-shrink-0 w-full lg:w-[40%]">

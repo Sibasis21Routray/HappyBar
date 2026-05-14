@@ -266,7 +266,7 @@ export default function OurCause() {
   return (
     <div className="w-full bg-white">
       {/* Causes grid */}
-      <div className="max-w-9xl mx-auto px-4 sm:px-18 py-0 pb-10">
+      <div className="max-w-9xl mx-auto px-4 sm:px-18 py-0 mb-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-18">
           {causes.map((cause) => (
             <CauseCard key={cause.id} cause={cause} />
