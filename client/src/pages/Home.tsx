@@ -25,7 +25,7 @@ const Home = () => {
       <Support />
       <OurCauses />
       <DonationBanner />
-      <BeingSocial/>
+      {/* <BeingSocial/> */}
     </div>
   )
 }
