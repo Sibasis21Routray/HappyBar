@@ -1,8 +1,10 @@
-import React from 'react'
+
 import { Link } from 'react-router-dom'
-import childreen5467 from "../../../../assets/childreen5467.webp"
-import kids5678 from "../../../assets/kids5678.webp"
-import child45678 from "../../../assets/child45678.jpg"
+import child from "../../../assets/childreen5467.webp"
+import kids5678  from "../../../assets/kids5678.webp"
+import child45678 from "../../../assets/child14.jpg"
+
+
 function AnnualReportBlog() {
   return (
     <div className="w-full bg-white">
@@ -22,7 +24,7 @@ function AnnualReportBlog() {
         {/* Hero image + Meta */}
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1fr_260px] -mt-16 relative z-10 items-start">
           <img 
-            src={childreen5467} 
+            src={child} 
             alt="Annual Report 2023" 
             className="w-full rounded-2xl shadow-xl object-cover aspect-[4/3]" 
           />
