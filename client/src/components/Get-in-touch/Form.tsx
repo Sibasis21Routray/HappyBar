@@ -209,7 +209,7 @@ export default function Form() {
             <img
               src={girl7}
               alt="Child in need"
-              className="w-full h-56 sm:h-72 md:h-96 object-cover mt-4 md:mt-10 rounded-2xl"
+              className="w-full h-56 sm:h-72 md:h-116 object-cover mt-4 md:mt-10 rounded-2xl"
             />
           </div>
 
