@@ -145,9 +145,6 @@ export default function Form() {
 
     // Read Turnstile token (the widget injects a textarea named 'cf-turnstile-response')
     const token = turnstileToken;
-console.log("Turnstile object:", (window as any).turnstile);
-// console.log("Token element:", tokenEl);
-console.log("Token value:", token);
 
 
     if (!token) {
@@ -189,7 +186,6 @@ console.log("Token value:", token);
          (window as any).turnstile.render(el, {
   sitekey: TURNSTILE_SITEKEY,
   callback: (token: string) => {
-    console.log("Turnstile success:", token);
     setTurnstileToken(token);
   },
 });

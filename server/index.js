@@ -12,7 +12,6 @@ app.use(express.json());
 const PORT = process.env.PORT || 3001;
 
 app.post("/api/contact", async (req, res) => {
-  console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
   try {
     const { name, email, mobile, message, token } = req.body || {};
     if (!token) return res.status(400).json({ error: "Missing Turnstile token" });
@@ -31,8 +30,8 @@ app.post("/api/contact", async (req, res) => {
     if (!brevoKey) return res.status(500).json({ error: "Brevo API key not configured" });
 
     const emailPayload = {
-      sender: { name: "Happy Bar Website", email: "borntoreigns234@gmail.com" },
-      to: [{ email: "tusar00005@gmail.com", name: "Happy Bar" }],
+      sender: { name: "Happy Bar Website", email: "info@happybarnutrition.org" },
+      to: [{ email: "info@happybarnutrition.org", name: "Happy Bar" }],
       subject: `Contact Form Submission from ${name}`,
       htmlContent: `<p><strong>Name:</strong> ${name}</p><p><strong>Email:</strong> ${email}</p><p><strong>Mobile:</strong> ${mobile}</p><p><strong>Message:</strong><br/>${message}</p>`,
     };
