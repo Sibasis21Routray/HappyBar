@@ -8,17 +8,15 @@ export default function Hero() {
         <div className="w-full bg-white">
           {/* 🔥 CHANGE: md:flex-row → lg:flex-row */}
           <div className="flex flex-col lg:flex-row items-stretch min-h-[520px]">
-
             {/* ── Left: Image overlapping orange bar ── */}
             <div className="relative flex-shrink-0 w-full lg:w-[40%]">
-              
               <div
-  className="absolute top-0 left-0 right-0"
-  style={{
-    height: "clamp(40px, 8vw, 130px)",
-    background: "var(--bg-orange)"
-  }}
-/>
+                className="absolute top-0 left-0 right-0"
+                style={{
+                  height: "clamp(40px, 8vw, 130px)",
+                  background: "var(--bg-orange)",
+                }}
+              />
 
               <div className="relative z-10 pl-4 sm:pl-8 md:pl-12 lg:pl-28 pr-4 lg:pr-0 pt-6 pb-10">
                 <img
@@ -32,25 +30,26 @@ export default function Hero() {
 
             {/* ── Right: Orange title bar + body ── */}
             <div className="flex-1 flex flex-col">
-              
-<div
-  className="flex items-center justify-center lg:bg-[var(--bg-orange)]"
-  style={{
-    height: "clamp(60px, 10vw, 130px)",
-    flexShrink: 0
-  }}
->
-
-  <div className="absolute right-0  overflow-hidden w-28 h-30">
-  <img
-    src={bird}
-    alt="Duck Peek"
-    className="w-32 h-auto animate-peek"
-  />
-</div>
+              <div
+                className="flex items-center justify-center lg:bg-[var(--bg-orange)]"
+                style={{
+                  height: "clamp(60px, 10vw, 130px)",
+                  flexShrink: 0,
+                }}
+              >
+                <div className="absolute right-0  overflow-hidden w-28 h-30">
+                  <img
+                    src={bird}
+                    alt="Duck Peek"
+                    className="w-32 h-auto animate-peek"
+                  />
+                </div>
                 <h1
                   className="text-black font-bold tracking-wide text-center px-4"
-                  style={{ fontSize: "clamp(2.5rem, 8vw, 4.5rem)", lineHeight: 1 }}
+                  style={{
+                    fontSize: "clamp(2.5rem, 8vw, 4.5rem)",
+                    lineHeight: 1,
+                  }}
                 >
                   Who We Are
                 </h1>
@@ -61,19 +60,27 @@ export default function Hero() {
                 className="flex flex-col justify-center items-center text-center py-10 sm:py-12 md:py-14 px-6 sm:px-8 md:px-10"
                 style={{ flex: 1 }}
               >
-                
                 <p
                   className="leading-relaxed mb-6 sm:mb-7 md:mb-8 max-w-2xl"
-                  style={{ fontSize: "clamp(1.3rem, 3vw, 1.18rem)", color: "#1a1a1a" }}
+                  style={{
+                    fontSize: "clamp(1.3rem, 3vw, 1.18rem)",
+                    color: "#1a1a1a",
+                  }}
                 >
                   Happy Bar Nutrition's mission is to feed children in
                   under-privileged societies to give them an equitable chance at
-                  life. Your gifts to help feed an undernourished child will make a
-                  huge and positive difference. Private donors cover our operating
-                  costs so 100% of your donation goes to the production of Happy
-                  Bars. Each Happy Bar costs US 25 cents and delivers 5g of protein
-                  per serving plus other{" "}
-                  <Link to="/what-we-do/#nutrition" style={{ color: "var(--link-blue)", textDecoration: "none" }}>
+                  life. Your gifts to help feed an undernourished child will
+                  make a huge and positive difference. Private donors cover our
+                  operating costs so 100% of your donation goes to the
+                  production of Happy Bars. Each Happy Bar costs US 25 cents and
+                  delivers 5g of protein per serving plus other{" "}
+                  <Link
+                    to="/what-we-do/#nutrition"
+                    style={{
+                      color: "var(--link-blue)",
+                      textDecoration: "none",
+                    }}
+                  >
                     nutrition
                   </Link>
                   .
@@ -81,7 +88,11 @@ export default function Hero() {
 
                 <p
                   className="font-bold max-w-2xl"
-                  style={{ color: "var(--link-blue)", fontSize: "clamp(1.3rem, 2.5vw, 1.05rem)", lineHeight: 1.5 }}
+                  style={{
+                    color: "var(--link-blue)",
+                    fontSize: "clamp(1.3rem, 2.5vw, 1.05rem)",
+                    lineHeight: 1.5,
+                  }}
                 >
                   <Link to="/">Happy Bar Nutrition </Link>
                   <span style={{ color: "var(--text-purple)" }}>
@@ -118,7 +129,6 @@ export default function Hero() {
               />
             </svg>
           </div>
-
         </div>
       </div>
     </div>

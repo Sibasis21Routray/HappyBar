@@ -22,11 +22,11 @@ const Year2024: React.FC = () => {
 
   const stats = useMemo<StatItem[]>(
     () => [
-      { target: 309025, color: "var(--text-orange)", label: "protein energy bars donated", format: "comma" },
+      { target: 287288, color: "var(--text-orange)", label: "protein energy bars donated", format: "comma" },
       { target: 14, color: "var(--text-purple-dark)", label: "locations/causes", format: "plain" },
-      { target: 3000, prefix: "~", color: "var(--text-yellow)", label: "children supported", format: "comma" },
+      { target: 3050, prefix: "~", color: "var(--text-yellow)", label: "children supported", format: "comma" },
       { target: 100, suffix: "%", color: "var(--text-blue-purple)", label: "of funds goes to production of Happy Bars", format: "plain" },
-      { target: 6, color: "var(--text-purple)", label: "volunteer staff", format: "plain" },
+      { target: 7, color: "var(--text-purple)", label: "volunteer staff", format: "plain" },
       { target: 0, color: "var(--text-blue)", label: "paid staff", format: "plain" },
     ],
     []
@@ -135,7 +135,7 @@ const Year2024: React.FC = () => {
           <div className="inline-flex flex-col items-center justify-center" style={{ width: "fit-content" }}>
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-center">
               <span style={{ color: "var(--text-purple-dark)" }}>Year </span>
-              <span style={{ color: "var(--text-yellow)" }}>2023</span>
+              <span style={{ color: "var(--text-yellow)" }}>2025  </span>
             </h2>
             <div
               className="-mt-1"

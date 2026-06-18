@@ -40,9 +40,9 @@ const Year2024: React.FC = () => {
 
   const stats = useMemo<StatItem[]>(
     () => [
-      { ref: count1Ref, target: 287288, color: "var(--text-orange)", label: "protein energy bars donated", format: "plain" },
+      { ref: count1Ref, target: 287288, color: "var(--text-orange)", label: "protein energy bars donated", format: "comma" },
       { ref: count2Ref, target: 14, color: "var(--text-purple-dark)", label: "locations/causes", format: "plain" },
-      { ref: count3Ref, target: 3050, prefix: "~", color: "var(--text-yellow)", label: "children supported", format: "plain" },
+      { ref: count3Ref, target: 3050, prefix: "~", color: "var(--text-yellow)", label: "children supported", format: "comma" },
       { ref: count4Ref, target: 100, suffix: "%", color: "var(--text-blue-purple)", label: "of funds goes to production of Happy Bars", format: "plain" },
       { ref: count5Ref, target: 7, color: "var(--text-purple)", label: "volunteer staff", format: "plain" },
       { ref: count6Ref, target: 0, color: "var(--text-blue)", label: "paid staff", format: "plain" },

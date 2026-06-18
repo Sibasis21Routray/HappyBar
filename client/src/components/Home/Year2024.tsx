@@ -22,9 +22,9 @@ const Year2025: React.FC = () => {
 
   const stats = useMemo<StatItem[]>(
     () => [
-      { target: 287288, color: "var(--text-orange)", label: "protein energy bars donated", format: "plain" },
+      { target: 287288, color: "var(--text-orange)", label: "protein energy bars donated", format: "comma" },
       { target: 14, color: "var(--text-purple-dark)", label: "locations/causes", format: "plain" },
-      { target: 3050, prefix: "~", color: "var(--text-yellow)", label: "children supported", format: "plain" },
+      { target: 3050, prefix: "~", color: "var(--text-yellow)", label: "children supported", format: "comma" },
       { target: 100, suffix: "%", color: "var(--text-blue-purple)", label: "of funds goes to production of Happy Bars", format: "plain" },
       { target: 7, color: "var(--text-purple)", label: "volunteer staff", format: "plain" },
       { target: 0, color: "var(--text-blue)", label: "paid staff", format: "plain" },
