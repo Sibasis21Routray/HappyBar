@@ -61,7 +61,7 @@ const Stats: React.FC = () => {
 
   return (
     <div className="w-full overflow-hidden flex justify-center" style={{ background: "#EFCDDE" }}>
-      <div className="w-full max-w-9xl mx-auto">
+      <div className="w-full max-w-7xl mx-auto">
         <section
           ref={sectionRef}
           className="w-full py-12 sm:py-14 md:py-16 lg:py-20 px-4 sm:px-6 md:px-12 lg:px-28 flex flex-col items-center gap-8 sm:gap-10"
