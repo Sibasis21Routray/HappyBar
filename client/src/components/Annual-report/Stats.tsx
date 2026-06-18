@@ -10,9 +10,9 @@ const Stats: React.FC = () => {
     if (hasAnimated.current) return;
     hasAnimated.current = true;
 
-    // Counter 1: 0 → 2.1 million
+    // Counter 1: 0 → 2.7 million
     const duration = 2000; // 2 seconds
-    const target1 = 2.1;
+    const target1 = 2700000; // 2.7 million
     const stepTime = 16; // ~60fps
     const steps = duration / stepTime;
     const increment1 = target1 / steps;
@@ -57,7 +57,7 @@ const Stats: React.FC = () => {
   // Format number for display
   const formatNumber = (num: number): string => {
     if (num >= 1000000) {
-      return num.toFixed(1) + " million";
+      return (num / 1000000).toFixed(1) + " million";
     }
     return num.toLocaleString();
   };
@@ -115,7 +115,7 @@ const Stats: React.FC = () => {
                 className="text-xs sm:text-sm md:text-base lg:text-lg font-bold tracking-wide"
                 style={{ color: "#333" }}
               >
-                target for 2025
+                target for 2026
               </p>
             </div>
           </div>

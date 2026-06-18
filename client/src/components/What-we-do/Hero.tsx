@@ -58,7 +58,7 @@ export default function Hero() {
               style={{ flex: 1 }}
             >
               <p
-                className="font-semibold text-gray-700 mb-6 sm:mb-8 text-xl md:text-xl lg:text-2xl max-w-xl mt-0 lg:mt-8 "
+                className="font-semibold text-gray-700 mb-6 sm:mb-8 text-xl md:text-xl lg:text-2xl max-w-xl mt-0  "
              
               >
                 TASTY, HEALTHY PROTEIN-RICH ENERGY BARS FOR UNDERNOURISHED KIDS

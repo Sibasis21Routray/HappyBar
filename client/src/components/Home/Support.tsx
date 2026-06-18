@@ -56,7 +56,7 @@ const Support: React.FC = () => {
                 className="text-4xl sm:text-5xl md:text-6xl font-black leading-tight"
                 style={{ color: "#ffffff" }}
               >
-                <span className="block"> <span style={{ color: "var(--text-yellow)" }}>Support</span> The</span>
+                <span className="block"> <span style={{ color: "var(--text-yellow)" }}>Support</span> The Cause</span>
               </h2>
               <div
                 className=" mt-0 md:-mt-2"
@@ -70,24 +70,7 @@ const Support: React.FC = () => {
               />
             </div>
 
-            <div>
-              <h2
-                className="text-4xl sm:text-5xl md:text-6xl font-black leading-tight"
-                style={{ color: "#ffffff" }}
-              >
-                <span className="block">Cause</span>
-              </h2>
-              <div
-                className="mt-0 lg:-mt-2"
-                style={{
-                  height: "6px",
-                  width: "100%",
-                  //maxWidth: "150px",
-                  backgroundImage: "radial-gradient(circle, #ffffff 3px, transparent 1.5px)",
-                  backgroundSize: "10px 6px",
-                }}
-              />
-            </div>
+           
 
             <p
               className="text-white text-sm sm:text-base md:text-lg leading-relaxed font-medium mt-2"

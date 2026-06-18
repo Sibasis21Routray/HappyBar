@@ -14,7 +14,7 @@ interface StatItem {
   format?: "comma" | "plain";
 }
 
-const Year2024: React.FC = () => {
+const Year2025: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
   const [counts, setCounts] = useState<number[]>([0, 0, 0, 0, 0, 0]);
@@ -22,11 +22,11 @@ const Year2024: React.FC = () => {
 
   const stats = useMemo<StatItem[]>(
     () => [
-      { target: 309025, color: "var(--text-orange)", label: "protein energy bars donated", format: "comma" },
+      { target: 287288, color: "var(--text-orange)", label: "protein energy bars donated", format: "plain" },
       { target: 14, color: "var(--text-purple-dark)", label: "locations/causes", format: "plain" },
-      { target: 3000, prefix: "~", color: "var(--text-yellow)", label: "children supported", format: "comma" },
+      { target: 3050, prefix: "~", color: "var(--text-yellow)", label: "children supported", format: "plain" },
       { target: 100, suffix: "%", color: "var(--text-blue-purple)", label: "of funds goes to production of Happy Bars", format: "plain" },
-      { target: 6, color: "var(--text-purple)", label: "volunteer staff", format: "plain" },
+      { target: 7, color: "var(--text-purple)", label: "volunteer staff", format: "plain" },
       { target: 0, color: "var(--text-blue)", label: "paid staff", format: "plain" },
     ],
     []
@@ -135,7 +135,7 @@ const Year2024: React.FC = () => {
           <div className="inline-flex flex-col items-center justify-center" style={{ width: "fit-content" }}>
             <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold text-center">
               <span style={{ color: "var(--text-purple-dark)" }}>Year </span>
-              <span style={{ color: "var(--text-yellow)" }}>2024</span>
+              <span style={{ color: "var(--text-yellow)" }}>2025</span>
             </h2>
             <div
               className="-mt-1"
@@ -157,7 +157,7 @@ const Year2024: React.FC = () => {
                 ref={imageRef}
                 src={girlImage}
                 alt="Girl smiling"
-                className="rounded-2xl object-cover w-full max-w-[280px] sm:max-w-[320px] md:max-w-[350px] lg:w-[300px] h-auto lg:h-[400px]"
+                className="rounded-2xl object-cover w-full max-w-[280px] sm:max-w-[320px] md:max-w-[350px] lg:w-[500px] h-auto lg:h-[500px]"
                 style={{
                   boxShadow: "0 8px 30px rgba(0,0,0,0.15)",
                 }}
@@ -167,7 +167,7 @@ const Year2024: React.FC = () => {
             {/* Right: Stats 2x3 Grid */}
             <div className="flex-1 max-w-4xl grid grid-cols-1 sm:grid-cols-2 gap-y-10 sm:gap-y-12 gap-x-8 sm:gap-x-12 md:gap-x-16 w-full">
               {stats.map((stat, i) => (
-                <div key={i} className="flex flex-col gap-1 sm:gap-2 text-center sm:text-left">
+                <div key={i} className="flex flex-col gap-1 sm:gap-2 text-center sm:text-center">
                   <span
                     className="font-bold block"
                     style={{
@@ -221,4 +221,4 @@ const Year2024: React.FC = () => {
   );
 };
 
-export default Year2024;
+export default Year2025;

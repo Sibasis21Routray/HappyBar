@@ -10,20 +10,20 @@ const Stats: React.FC = () => {
     if (hasAnimated.current) return;
     hasAnimated.current = true;
 
-    // Counter 1: 0 → 2.1 million
+    // Counter 1: 0 → 2.7 million
     const duration = 2000; // 2 seconds
-    const target1 = 2.1;
-    const stepTime1 = 16; // ~60fps
-    const steps1 = duration / stepTime1;
-    const increment1 = target1 / steps1;
-    let current1 = 0;
-    let timer1: number;
+    const target1 = 2700000;
+    const stepTime = 16; // ~60fps
+    const steps = duration / stepTime;
+    const increment1 = target1 / steps;
 
     // Counter 2: 0 → 500,000
     const target2 = 500000;
-    const increment2 = target2 / steps1;
+    const increment2 = target2 / steps;
+
+    let current1 = 0;
     let current2 = 0;
-    let timer2: number;
+    let timer: number;
 
     const updateCounters = () => {
       current1 += increment1;
@@ -32,8 +32,7 @@ const Stats: React.FC = () => {
       if (current1 >= target1) {
         setCount1(target1);
         setCount2(target2);
-        clearInterval(timer1);
-        clearInterval(timer2);
+        clearInterval(timer);
         return;
       }
 
@@ -41,12 +40,10 @@ const Stats: React.FC = () => {
       setCount2(Math.round(current2));
     };
 
-    timer1 = window.setInterval(updateCounters, stepTime1);
-    timer2 = window.setInterval(updateCounters, stepTime1);
+    timer = window.setInterval(updateCounters, stepTime);
 
     return () => {
-      clearInterval(timer1);
-      clearInterval(timer2);
+      clearInterval(timer);
     };
   }, []);
 
@@ -94,13 +91,13 @@ const Stats: React.FC = () => {
               {/* Stat 1 */}
               <div className="flex flex-col items-center text-center w-full sm:w-auto flex-1">
                 <span
-                  className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold whitespace-nowrap"
+                  className="text-5xl sm:text-6xl md:text-7xl  font-bold whitespace-nowrap"
                   style={{ color: "#e8420a" }}
                 >
                   {formatNumber(count1)}
                 </span>
                 <p
-                  className="text-xs sm:text-sm md:text-base lg:text-lg font-bold tracking-wide mt-2 md:mt-3 max-w-xs mx-auto"
+                  className="text-xs sm:text-sm md:text-base lg:text-lg font-bold tracking-wide mt-2 md:mt-3  mx-auto"
                   style={{ color: "#333" }}
                 >
                   protein energy bars donated to date
@@ -110,7 +107,7 @@ const Stats: React.FC = () => {
               {/* Stat 2 */}
               <div className="flex flex-col items-center text-center w-full sm:w-auto flex-1">
                 <span
-                  className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold whitespace-nowrap"
+                  className="text-5xl sm:text-6xl md:text-7xl  font-bold whitespace-nowrap"
                   style={{ color: "#e8420a" }}
                 >
                   {count2.toLocaleString()}
@@ -119,7 +116,7 @@ const Stats: React.FC = () => {
                   className="text-xs sm:text-sm md:text-base lg:text-lg font-bold tracking-wide mt-2 md:mt-3"
                   style={{ color: "#333" }}
                 >
-                  target for 2025
+                  target for 2026
                 </p>
               </div>
             </div>

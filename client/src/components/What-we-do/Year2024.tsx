@@ -15,7 +15,7 @@ export default function Year2024() {
               style={{ fontSize: "clamp(2.8rem, 6vw, 4.2rem)" }}
             >
               <span style={{ color: "var(--text-purple-dark)" }}>Year </span>
-              <span style={{ color: "var(--text-yellow)" }}>2024</span>
+              <span style={{ color: "var(--text-yellow)" }}>2025</span>
             </h2>
 
             {/* Two-color dotted underline */}
@@ -54,14 +54,14 @@ export default function Year2024() {
             <p className="mb-6">
               <Link to="/" style={{ color: "#5bb8d4", fontWeight: 700 }}>Happy Bar Nutrition</Link>{" "}
               Inc has donated over{" "}
-              <strong>2.1 million</strong> Happy Bars to undernourished children and elderly
+              <strong>2.7 million</strong> Happy Bars to undernourished children and elderly
               in poverty since 2014.
             </p>
 
             <p className="mb-6">
-              In 2024, we supported ~
+              In 2025, we supported ~
               <strong>
-                3,000 children &amp; 100 adults in 14 locations/campaigns
+                3,050 children &amp; 100 adults in 14 locations/campaigns
               </strong>{" "}
               covering children in 1 leprosy program, 4 HIV/AIDS orphanages, 10 schools
               for the disadvantaged, 11 cancer and special needs wards for children, and

@@ -19,7 +19,7 @@ export default function Hero() {
           {/* ── Left: Image overlapping stripe ── */}
           <div className="relative lg:flex-shrink-0 w-full lg:w-1/2">
             {/* Image sits over the stripe - overlapping on mobile */}
-            <div className="relative z-10 lg:pl-20 pl-4 pr-4 md:pr-0 pt-0 pb-10">
+            <div className="relative z-10 lg:pl-20 pl-4 pr-4 md:pr-0 pt-0 md:pt-20 pb-10">
               <img
                 src={getInvolved}
                 alt="Happy child"

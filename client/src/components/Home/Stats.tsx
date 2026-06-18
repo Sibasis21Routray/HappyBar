@@ -17,13 +17,13 @@ const Stats: React.FC = () => {
             const duration = 4000; // 4 seconds (slower)
             const interval = 20; // update every 20ms
             const steps = duration / interval;
-            const increment1 = 2.1 / steps;
+            const increment1 = 2.7 / steps;
             let current1 = 0;
             
             const timer1 = setInterval(() => {
               current1 += increment1;
-              if (current1 >= 2.1) {
-                setCount1(2.1);
+              if (current1 >= 2.7) {
+                setCount1(2.7);
                 clearInterval(timer1);
               } else {
                 setCount1(current1);
@@ -122,7 +122,7 @@ const Stats: React.FC = () => {
                 className="text-xs sm:text-sm md:text-base lg:text-lg font-bold tracking-wide"
                 style={{ color: "#333" }}
               >
-                target for 2025
+                target for 2026
               </p>
             </div>
           </div>

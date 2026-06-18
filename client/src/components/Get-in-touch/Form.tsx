@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import girl7 from "../../assets/girl7.jpg";
 import { Link, useNavigate } from "react-router";
 import mail from "../../assets/mail.png"
@@ -33,6 +33,8 @@ export default function Form() {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState<{ type: string; text: string } | null>(null);
   const navigate = useNavigate();
+  const TURNSTILE_SITEKEY = import.meta.env.VITE_TURNSTILE_SITEKEY;
+  const CONTACT_API = import.meta.env.VITE_CONTACT_API_URL || "http://localhost:3001/api/contact";
 
   // Validation functions
   const validateName = (name: string): string => {
@@ -138,27 +140,65 @@ export default function Form() {
     setLoading(true);
     setMessage(null);
 
-    // Create email body with proper formatting
-    const emailBody = `Name: ${form.name}%0A%0AEmail: ${form.email}%0A%0AMobile: ${form.mobile}%0A%0AMessage:%0A${form.message}`;
-    
-    // Create proper mailto link with mailto: prefix
-    const mailtoLink = `mailto:info@happybarnutrition.org?subject=Contact Form Submission from ${encodeURIComponent(form.name)}&body=${emailBody}`;
+    // Read Turnstile token (the widget injects a textarea named 'cf-turnstile-response')
+    const tokenEl = document.querySelector('textarea[name="cf-turnstile-response"]') as HTMLTextAreaElement | null;
+    const token = tokenEl?.value || "";
 
-    // Open default email client
-    window.location.href = mailtoLink;
+    if (!token) {
+      setMessage({ type: "error", text: "Please complete the captcha verification." });
+      setLoading(false);
+      return;
+    }
 
-    // Show success message
-    setMessage({ 
-      type: "success", 
-      text: "Your email client has been opened. Please send the email to complete your submission." 
-    });
-    
-    // Reset form
-    setForm({ name: "", email: "", mobile: "", message: "" });
-    setErrors({});
-    setTouched({});
-    setLoading(false);
+    // POST to backend API which will verify Turnstile and send email via Brevo
+    fetch(CONTACT_API, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ ...form, token }),
+    })
+      .then(async (res) => {
+        const data = await res.json();
+        if (!res.ok) throw data;
+        setMessage({ type: "success", text: "Message sent successfully. Thank you!" });
+        setForm({ name: "", email: "", mobile: "", message: "" });
+        setErrors({});
+        setTouched({});
+      })
+      .catch((err) => {
+        console.error("Contact error:", err);
+        const text = err?.error || err?.message || "Failed to send message. Please try again later.";
+        setMessage({ type: "error", text });
+      })
+      .finally(() => setLoading(false));
   };
+
+  // Load Turnstile script and render widget
+  useEffect(() => {
+    if (!TURNSTILE_SITEKEY) return;
+
+    const renderTurnstile = () => {
+      try {
+        const el = document.getElementById("turnstile-widget");
+        if (el && (window as any).turnstile && !(window as any)._turnstileRendered) {
+          (window as any).turnstile.render(el, { sitekey: TURNSTILE_SITEKEY });
+          (window as any)._turnstileRendered = true;
+        }
+      } catch (e) {
+        // ignore
+      }
+    };
+
+    if (!(window as any).turnstile) {
+      const s = document.createElement("script");
+      s.src = "https://challenges.cloudflare.com/turnstile/v0/api.js";
+      s.async = true;
+      s.defer = true;
+      s.onload = renderTurnstile;
+      document.head.appendChild(s);
+    } else {
+      renderTurnstile();
+    }
+  }, [TURNSTILE_SITEKEY]);
 
   return (
     <div className="w-full min-h-screen max-w-9xl mx-auto" style={{ fontFamily: "sans-serif" }}>
@@ -299,6 +339,9 @@ export default function Form() {
                 <p className="text-red-600 text-xs mt-1 ml-2">{errors.message}</p>
               )}
             </div>
+
+            {/* Turnstile captcha widget */}
+            <div id="turnstile-widget" className="mt-2" />
 
             {/* Message Display */}
             {message && (
