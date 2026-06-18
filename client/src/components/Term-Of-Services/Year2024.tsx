@@ -167,7 +167,7 @@ const Year2024: React.FC = () => {
             {/* Right: Stats 2x3 Grid */}
             <div className="flex-1 max-w-4xl grid grid-cols-1 sm:grid-cols-2 gap-y-10 sm:gap-y-12 gap-x-8 sm:gap-x-12 md:gap-x-16 w-full">
               {stats.map((stat, i) => (
-                <div key={i} className="flex flex-col gap-1 sm:gap-2 text-center sm:text-left">
+                <div key={i} className="flex flex-col gap-1 sm:gap-2 text-center sm:text-center">
                   <span
                     className="font-bold block"
                     style={{
