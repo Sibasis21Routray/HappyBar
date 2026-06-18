@@ -32,6 +32,9 @@ export default function Form() {
   const [touched, setTouched] = useState<Record<string, boolean>>({});
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState<{ type: string; text: string } | null>(null);
+
+  const [turnstileToken, setTurnstileToken] = useState("");
+
   const navigate = useNavigate();
   const TURNSTILE_SITEKEY = import.meta.env.VITE_TURNSTILE_SITEKEY;
   const CONTACT_API = import.meta.env.VITE_CONTACT_API_URL || "http://localhost:3001/api/contact";
@@ -141,8 +144,11 @@ export default function Form() {
     setMessage(null);
 
     // Read Turnstile token (the widget injects a textarea named 'cf-turnstile-response')
-    const tokenEl = document.querySelector('textarea[name="cf-turnstile-response"]') as HTMLTextAreaElement | null;
-    const token = tokenEl?.value || "";
+    const token = turnstileToken;
+console.log("Turnstile object:", (window as any).turnstile);
+// console.log("Token element:", tokenEl);
+console.log("Token value:", token);
+
 
     if (!token) {
       setMessage({ type: "error", text: "Please complete the captcha verification." });
@@ -180,7 +186,13 @@ export default function Form() {
       try {
         const el = document.getElementById("turnstile-widget");
         if (el && (window as any).turnstile && !(window as any)._turnstileRendered) {
-          (window as any).turnstile.render(el, { sitekey: TURNSTILE_SITEKEY });
+         (window as any).turnstile.render(el, {
+  sitekey: TURNSTILE_SITEKEY,
+  callback: (token: string) => {
+    console.log("Turnstile success:", token);
+    setTurnstileToken(token);
+  },
+});
           (window as any)._turnstileRendered = true;
         }
       } catch (e) {

@@ -40,9 +40,9 @@ const Year2024: React.FC = () => {
 
   const stats = useMemo<StatItem[]>(
     () => [
-      { ref: count1Ref, target: 309025, color: "var(--text-orange, #e8420a)", label: "protein energy bars donated", format: "comma" },
+      { ref: count1Ref, target: 287288, color: "var(--text-orange, #e8420a)", label: "protein energy bars donated", format: "plain" },
       { ref: count2Ref, target: 14, color: "var(--text-purple-dark, #5e2a7c)", label: "locations/causes", format: "plain" },
-      { ref: count3Ref, target: 3050, prefix: "~", color: "var(--text-yellow, #f5a623)", label: "children supported", format: "comma" },
+      { ref: count3Ref, target: 3050, prefix: "~", color: "var(--text-yellow, #f5a623)", label: "children supported", format: "plain" },
       { ref: count4Ref, target: 100, suffix: "%", color: "var(--text-blue-purple, #7b2cbf)", label: "of funds goes to production of Happy Bars", format: "plain" },
       { ref: count5Ref, target: 7, color: "var(--text-purple, #9b4d96)", label: "volunteer staff", format: "plain" },
       { ref: count6Ref, target: 0, color: "var(--text-blue, #2c6e9e)", label: "paid staff", format: "plain" },
@@ -149,7 +149,7 @@ const Year2024: React.FC = () => {
               style={{ opacity: 0 }}
             >
               <span style={{ color: "var(--text-purple-dark, #5e2a7c)" }}>Year </span>
-              <span style={{ color: "var(--text-yellow, #f5a623)" }}>2024</span>
+              <span style={{ color: "var(--text-yellow, #f5a623)" }}>2025</span>
             </h2>
             <div
               ref={dotlineRef}
