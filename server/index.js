@@ -16,7 +16,7 @@ const createTransporter = () => {
   return nodemailer.createTransport({
     host: process.env.BREVO_SMTP_HOST || 'smtp-relay.brevo.com',
     port: parseInt(process.env.BREVO_SMTP_PORT || '587'),
-    secure: process.env.BREVO_SMTP_SECURE === 'true', // false for 587, true for 465
+    secure: false, // false for 587, true for 465
     auth: {
       user: process.env.BREVO_SMTP_LOGIN, // Your Brevo SMTP login (email)
       pass: process.env.BREVO_SMTP_KEY,   // Your Brevo SMTP key
@@ -27,7 +27,7 @@ const createTransporter = () => {
 // Verify Turnstile function
 const verifyTurnstile = async (token) => {
   try {
-    const params = new URLSearchParams();
+    const params = new URLSearchParams(); 
     params.append('secret', process.env.TURNSTILE_SECRET || '');
     params.append('response', token);
 
