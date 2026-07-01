@@ -172,7 +172,7 @@ export default function Form() {
         const text = err?.error || err?.message || "Failed to send message. Please try again later.";
         setMessage({ type: "error", text });
       })
-      .finally(() => setLoading(false));
+      .then(() => setLoading(false), () => setLoading(false));
   };
 
   // Load Turnstile script and render widget
@@ -251,7 +251,7 @@ export default function Form() {
         </div>
 
         {/* ── Image + Form grid ── */}
-        <div className="max-w-10/12 mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-start">
+        <div className="max-w-full md:max-w-10/12 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 items-start">
           {/* Image — hidden on very small screens, shown from sm up */}
           <div className="hidden sm:block rounded-2xl overflow-hidden w-full">
             <img
